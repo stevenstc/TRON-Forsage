@@ -1,9 +1,5 @@
 pragma solidity 0.5.10;
 
-contract XGOLD {
-    function deposit(address sender, address referrer) public payable;
-}
-
 contract FORSAGE_TRX_COMMUNITY {
 
     struct User {
@@ -45,8 +41,6 @@ contract FORSAGE_TRX_COMMUNITY {
     address public owner;
 
     mapping(uint8 => uint) public levelPrice;
-
-    XGOLD public xGOLD;
 
     event Registration(address indexed user, address indexed referrer, uint indexed userId, uint referrerId);
     event Reinvest(address indexed user, address indexed currentReferrer, address indexed caller, uint8 matrix, uint8 level);
@@ -99,11 +93,6 @@ contract FORSAGE_TRX_COMMUNITY {
         registration(msg.sender, bytesToAddress(msg.data));
     }
 
-    function setXGold(address xGoldAddress) public {
-        require(msg.sender == 0x606527eCB96eD08f776c5220aFE8f41474772934, "onlyOwner");
-        require(address(xGOLD) == address(0));
-        xGOLD = XGOLD(xGoldAddress);
-    }
 
     function withdrawLostTRXFromBalance() public {
         require(msg.sender == 0x606527eCB96eD08f776c5220aFE8f41474772934, "onlyOwner");
@@ -164,12 +153,8 @@ contract FORSAGE_TRX_COMMUNITY {
         }
         require(size == 0, "cannot be a contract");
 
-        if (address(xGOLD) != address(0)) {
-            xGOLD.deposit(userAddress, referrerAddress);
-            require(msg.value == levelPrice[currentStartingLevel] * 3, "invalid registration cost");
-        } else {
-            require(msg.value == levelPrice[currentStartingLevel] * 2, "invalid registration cost");
-        }
+        require(msg.value == levelPrice[currentStartingLevel] * 2, "invalid registration cost");
+        
 
         User memory user = User({
             id: lastUserId,
