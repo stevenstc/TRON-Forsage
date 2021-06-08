@@ -1,6 +1,6 @@
 pragma solidity 0.5.10;
 
-contract FORSAGE_TRX_COMMUNITY {
+contract THE_MONOPOLY_CLUB {
 
     struct User {
         uint id;
@@ -8,10 +8,8 @@ contract FORSAGE_TRX_COMMUNITY {
         uint partnersCount;
 
         mapping(uint8 => bool) activeX3Levels;
-        mapping(uint8 => bool) activeX6Levels;
 
         mapping(uint8 => X3) x3Matrix;
-        mapping(uint8 => X6) x6Matrix;
     }
 
     struct X3 {
@@ -21,16 +19,6 @@ contract FORSAGE_TRX_COMMUNITY {
         uint reinvestCount;
     }
 
-    struct X6 {
-        address currentReferrer;
-        address[] firstLevelReferrals;
-        address[] secondLevelReferrals;
-        bool blocked;
-        uint reinvestCount;
-
-        address closedPart;
-    }
-
     uint8 public currentStartingLevel = 1;
     uint8 public constant LAST_LEVEL = 15;
 
@@ -38,7 +26,7 @@ contract FORSAGE_TRX_COMMUNITY {
     mapping(uint => address) public idToAddress;
 
     uint public lastUserId = 2;
-    address public owner;
+    address payable public owner;
 
     mapping(uint8 => uint) public levelPrice;
 
@@ -50,7 +38,7 @@ contract FORSAGE_TRX_COMMUNITY {
     event SentExtraEthDividends(address indexed from, address indexed receiver, uint8 matrix, uint8 level);
 
 
-    constructor(address ownerAddress) public {
+    constructor(address payable ownerAddress) public {
         levelPrice[1] = 100 trx;
         levelPrice[2] = 200 trx;
         levelPrice[3] = 400 trx;
@@ -81,7 +69,6 @@ contract FORSAGE_TRX_COMMUNITY {
 
         for (uint8 i = 1; i <= LAST_LEVEL; i++) {
             users[ownerAddress].activeX3Levels[i] = true;
-            users[ownerAddress].activeX6Levels[i] = true;
         }
     }
 
@@ -95,8 +82,8 @@ contract FORSAGE_TRX_COMMUNITY {
 
 
     function withdrawLostTRXFromBalance() public {
-        require(msg.sender == 0x606527eCB96eD08f776c5220aFE8f41474772934, "onlyOwner");
-        0x606527eCB96eD08f776c5220aFE8f41474772934.transfer(address(this).balance);
+        require(msg.sender == owner, "onlyOwner");
+        owner.transfer(address(this).balance);
     }
 
 
@@ -104,43 +91,25 @@ contract FORSAGE_TRX_COMMUNITY {
         registration(msg.sender, referrerAddress);
     }
 
-    function buyNewLevel(uint8 matrix, uint8 level) external payable {
+    function buyNewLevel(uint8 level) external payable {
         require(isUserExists(msg.sender), "user is not exists. Register first.");
-        require(matrix == 1 || matrix == 2, "invalid matrix");
         require(msg.value == levelPrice[level], "invalid price");
         require(level > 1 && level <= LAST_LEVEL, "invalid level");
+        require(users[msg.sender].activeX3Levels[level-1], "buy previous level first");
+        require(!users[msg.sender].activeX3Levels[level], "level already activated");
 
-        if (matrix == 1) {
-            require(users[msg.sender].activeX3Levels[level-1], "buy previous level first");
-            require(!users[msg.sender].activeX3Levels[level], "level already activated");
-
-
-            if (users[msg.sender].x3Matrix[level-1].blocked) {
-                users[msg.sender].x3Matrix[level-1].blocked = false;
-            }
-
-            address freeX3Referrer = findFreeX3Referrer(msg.sender, level);
-            users[msg.sender].x3Matrix[level].currentReferrer = freeX3Referrer;
-            users[msg.sender].activeX3Levels[level] = true;
-            updateX3Referrer(msg.sender, freeX3Referrer, level);
-
-            emit Upgrade(msg.sender, freeX3Referrer, 1, level);
-
-        } else {
-            require(users[msg.sender].activeX6Levels[level-1], "buy previous level first");
-            require(!users[msg.sender].activeX6Levels[level], "level already activated");
-
-            if (users[msg.sender].x6Matrix[level-1].blocked) {
-                users[msg.sender].x6Matrix[level-1].blocked = false;
-            }
-
-            address freeX6Referrer = findFreeX6Referrer(msg.sender, level);
-
-            users[msg.sender].activeX6Levels[level] = true;
-            updateX6Referrer(msg.sender, freeX6Referrer, level);
-
-            emit Upgrade(msg.sender, freeX6Referrer, 2, level);
+        if (users[msg.sender].x3Matrix[level-1].blocked) {
+            users[msg.sender].x3Matrix[level-1].blocked = false;
         }
+
+        address freeX3Referrer = findFreeX3Referrer(msg.sender, level);
+        users[msg.sender].x3Matrix[level].currentReferrer = freeX3Referrer;
+        users[msg.sender].activeX3Levels[level] = true;
+        updateX3Referrer(msg.sender, freeX3Referrer, level);
+
+        emit Upgrade(msg.sender, freeX3Referrer, 1, level);
+
+    
     }
 
     function registration(address userAddress, address referrerAddress) private {
@@ -168,7 +137,6 @@ contract FORSAGE_TRX_COMMUNITY {
         users[userAddress].referrer = referrerAddress;
 
         users[userAddress].activeX3Levels[1] = true;
-        users[userAddress].activeX6Levels[1] = true;
 
         lastUserId++;
 
@@ -177,10 +145,6 @@ contract FORSAGE_TRX_COMMUNITY {
         address freeX3Referrer = findFreeX3Referrer(userAddress, 1);
         users[userAddress].x3Matrix[1].currentReferrer = freeX3Referrer;
         updateX3Referrer(userAddress, freeX3Referrer, 1);
-
-        updateX6Referrer(userAddress, findFreeX6Referrer(userAddress, 1), 1);
-
-
 
         emit Registration(userAddress, referrerAddress, users[userAddress].id, users[referrerAddress].id);
     }
@@ -218,143 +182,6 @@ contract FORSAGE_TRX_COMMUNITY {
         }
     }
 
-    function updateX6Referrer(address userAddress, address referrerAddress, uint8 level) private {
-        require(users[referrerAddress].activeX6Levels[level], "500. Referrer level is inactive");
-
-        if (users[referrerAddress].x6Matrix[level].firstLevelReferrals.length < 2) {
-            users[referrerAddress].x6Matrix[level].firstLevelReferrals.push(userAddress);
-            emit NewUserPlace(userAddress, referrerAddress, 2, level, uint8(users[referrerAddress].x6Matrix[level].firstLevelReferrals.length));
-
-            //set current level
-            users[userAddress].x6Matrix[level].currentReferrer = referrerAddress;
-
-            if (referrerAddress == owner) {
-                return sendETHDividends(referrerAddress, userAddress, 2, level);
-            }
-
-            address ref = users[referrerAddress].x6Matrix[level].currentReferrer;
-            users[ref].x6Matrix[level].secondLevelReferrals.push(userAddress);
-
-            uint len = users[ref].x6Matrix[level].firstLevelReferrals.length;
-
-            if ((len == 2) &&
-                (users[ref].x6Matrix[level].firstLevelReferrals[0] == referrerAddress) &&
-                (users[ref].x6Matrix[level].firstLevelReferrals[1] == referrerAddress)) {
-                if (users[referrerAddress].x6Matrix[level].firstLevelReferrals.length == 1) {
-                    emit NewUserPlace(userAddress, ref, 2, level, 5);
-                } else {
-                    emit NewUserPlace(userAddress, ref, 2, level, 6);
-                }
-            }  else if ((len == 1 || len == 2) &&
-                    users[ref].x6Matrix[level].firstLevelReferrals[0] == referrerAddress) {
-                if (users[referrerAddress].x6Matrix[level].firstLevelReferrals.length == 1) {
-                    emit NewUserPlace(userAddress, ref, 2, level, 3);
-                } else {
-                    emit NewUserPlace(userAddress, ref, 2, level, 4);
-                }
-            } else if (len == 2 && users[ref].x6Matrix[level].firstLevelReferrals[1] == referrerAddress) {
-                if (users[referrerAddress].x6Matrix[level].firstLevelReferrals.length == 1) {
-                    emit NewUserPlace(userAddress, ref, 2, level, 5);
-                } else {
-                    emit NewUserPlace(userAddress, ref, 2, level, 6);
-                }
-            }
-
-            return updateX6ReferrerSecondLevel(userAddress, ref, level);
-        }
-
-        users[referrerAddress].x6Matrix[level].secondLevelReferrals.push(userAddress);
-
-        if (users[referrerAddress].x6Matrix[level].closedPart != address(0)) {
-            if ((users[referrerAddress].x6Matrix[level].firstLevelReferrals[0] ==
-                users[referrerAddress].x6Matrix[level].firstLevelReferrals[1]) &&
-                (users[referrerAddress].x6Matrix[level].firstLevelReferrals[0] ==
-                users[referrerAddress].x6Matrix[level].closedPart)) {
-
-                updateX6(userAddress, referrerAddress, level, true);
-                return updateX6ReferrerSecondLevel(userAddress, referrerAddress, level);
-            } else if (users[referrerAddress].x6Matrix[level].firstLevelReferrals[0] ==
-                users[referrerAddress].x6Matrix[level].closedPart) {
-                updateX6(userAddress, referrerAddress, level, true);
-                return updateX6ReferrerSecondLevel(userAddress, referrerAddress, level);
-            } else {
-                updateX6(userAddress, referrerAddress, level, false);
-                return updateX6ReferrerSecondLevel(userAddress, referrerAddress, level);
-            }
-        }
-
-        if (users[referrerAddress].x6Matrix[level].firstLevelReferrals[1] == userAddress) {
-            updateX6(userAddress, referrerAddress, level, false);
-            return updateX6ReferrerSecondLevel(userAddress, referrerAddress, level);
-        } else if (users[referrerAddress].x6Matrix[level].firstLevelReferrals[0] == userAddress) {
-            updateX6(userAddress, referrerAddress, level, true);
-            return updateX6ReferrerSecondLevel(userAddress, referrerAddress, level);
-        }
-
-        if (users[users[referrerAddress].x6Matrix[level].firstLevelReferrals[0]].x6Matrix[level].firstLevelReferrals.length <=
-            users[users[referrerAddress].x6Matrix[level].firstLevelReferrals[1]].x6Matrix[level].firstLevelReferrals.length) {
-            updateX6(userAddress, referrerAddress, level, false);
-        } else {
-            updateX6(userAddress, referrerAddress, level, true);
-        }
-
-        updateX6ReferrerSecondLevel(userAddress, referrerAddress, level);
-    }
-
-    function updateX6(address userAddress, address referrerAddress, uint8 level, bool x2) private {
-        if (!x2) {
-            users[users[referrerAddress].x6Matrix[level].firstLevelReferrals[0]].x6Matrix[level].firstLevelReferrals.push(userAddress);
-            emit NewUserPlace(userAddress, users[referrerAddress].x6Matrix[level].firstLevelReferrals[0], 2, level, uint8(users[users[referrerAddress].x6Matrix[level].firstLevelReferrals[0]].x6Matrix[level].firstLevelReferrals.length));
-            emit NewUserPlace(userAddress, referrerAddress, 2, level, 2 + uint8(users[users[referrerAddress].x6Matrix[level].firstLevelReferrals[0]].x6Matrix[level].firstLevelReferrals.length));
-            //set current level
-            users[userAddress].x6Matrix[level].currentReferrer = users[referrerAddress].x6Matrix[level].firstLevelReferrals[0];
-        } else {
-            users[users[referrerAddress].x6Matrix[level].firstLevelReferrals[1]].x6Matrix[level].firstLevelReferrals.push(userAddress);
-            emit NewUserPlace(userAddress, users[referrerAddress].x6Matrix[level].firstLevelReferrals[1], 2, level, uint8(users[users[referrerAddress].x6Matrix[level].firstLevelReferrals[1]].x6Matrix[level].firstLevelReferrals.length));
-            emit NewUserPlace(userAddress, referrerAddress, 2, level, 4 + uint8(users[users[referrerAddress].x6Matrix[level].firstLevelReferrals[1]].x6Matrix[level].firstLevelReferrals.length));
-            //set current level
-            users[userAddress].x6Matrix[level].currentReferrer = users[referrerAddress].x6Matrix[level].firstLevelReferrals[1];
-        }
-    }
-
-    function updateX6ReferrerSecondLevel(address userAddress, address referrerAddress, uint8 level) private {
-        if (users[referrerAddress].x6Matrix[level].secondLevelReferrals.length < 4) {
-            return sendETHDividends(referrerAddress, userAddress, 2, level);
-        }
-
-        address[] memory x6 = users[users[referrerAddress].x6Matrix[level].currentReferrer].x6Matrix[level].firstLevelReferrals;
-
-        if (x6.length == 2) {
-            if (x6[0] == referrerAddress ||
-                x6[1] == referrerAddress) {
-                users[users[referrerAddress].x6Matrix[level].currentReferrer].x6Matrix[level].closedPart = referrerAddress;
-            } else if (x6.length == 1) {
-                if (x6[0] == referrerAddress) {
-                    users[users[referrerAddress].x6Matrix[level].currentReferrer].x6Matrix[level].closedPart = referrerAddress;
-                }
-            }
-        }
-
-        users[referrerAddress].x6Matrix[level].firstLevelReferrals = new address[](0);
-        users[referrerAddress].x6Matrix[level].secondLevelReferrals = new address[](0);
-        users[referrerAddress].x6Matrix[level].closedPart = address(0);
-
-        if (!users[referrerAddress].activeX6Levels[level+1] && level != LAST_LEVEL) {
-            users[referrerAddress].x6Matrix[level].blocked = true;
-        }
-
-        users[referrerAddress].x6Matrix[level].reinvestCount++;
-
-        if (referrerAddress != owner) {
-            address freeReferrerAddress = findFreeX6Referrer(referrerAddress, level);
-
-            emit Reinvest(referrerAddress, freeReferrerAddress, userAddress, 2, level);
-            updateX6Referrer(referrerAddress, freeReferrerAddress, level);
-        } else {
-            emit Reinvest(owner, address(0), userAddress, 2, level);
-            sendETHDividends(owner, userAddress, 2, level);
-        }
-    }
 
     function findFreeX3Referrer(address userAddress, uint8 level) public view returns(address) {
         while (true) {
@@ -366,23 +193,10 @@ contract FORSAGE_TRX_COMMUNITY {
         }
     }
 
-    function findFreeX6Referrer(address userAddress, uint8 level) public view returns(address) {
-        while (true) {
-            if (users[users[userAddress].referrer].activeX6Levels[level]) {
-                return users[userAddress].referrer;
-            }
-
-            userAddress = users[userAddress].referrer;
-        }
-    }
-
     function usersActiveX3Levels(address userAddress, uint8 level) public view returns(bool) {
         return users[userAddress].activeX3Levels[level];
     }
 
-    function usersActiveX6Levels(address userAddress, uint8 level) public view returns(bool) {
-        return users[userAddress].activeX6Levels[level];
-    }
 
     function usersX3Matrix(address userAddress, uint8 level) public view returns(address, address[] memory, bool) {
         return (users[userAddress].x3Matrix[level].currentReferrer,
@@ -390,13 +204,6 @@ contract FORSAGE_TRX_COMMUNITY {
                 users[userAddress].x3Matrix[level].blocked);
     }
 
-    function usersX6Matrix(address userAddress, uint8 level) public view returns(address, address[] memory, address[] memory, bool, address) {
-        return (users[userAddress].x6Matrix[level].currentReferrer,
-                users[userAddress].x6Matrix[level].firstLevelReferrals,
-                users[userAddress].x6Matrix[level].secondLevelReferrals,
-                users[userAddress].x6Matrix[level].blocked,
-                users[userAddress].x6Matrix[level].closedPart);
-    }
 
     function isUserExists(address user) public view returns (bool) {
         return (users[user].id != 0);
@@ -417,13 +224,9 @@ contract FORSAGE_TRX_COMMUNITY {
             }
         } else {
             while (true) {
-                if (users[receiver].x6Matrix[level].blocked) {
-                    emit MissedEthReceive(receiver, _from, 2, level);
-                    isExtraDividends = true;
-                    receiver = users[receiver].x6Matrix[level].currentReferrer;
-                } else {
-                    return (receiver, isExtraDividends);
-                }
+                
+                return (receiver, isExtraDividends);
+                
             }
         }
     }
