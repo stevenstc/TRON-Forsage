@@ -1,6 +1,23 @@
-pragma solidity 0.5.10;
+pragma solidity >=0.5.10;
+
+contract TRC20_Interface {
+
+    function allowance(address _owner, address _spender) public view returns (uint remaining);
+
+    function transferFrom(address _from, address _to, uint _value) public returns (bool);
+
+    function transfer(address direccion, uint cantidad) public returns (bool);
+
+    function balanceOf(address who) public view returns (uint256);
+    
+    function decimals() public view returns (uint256);
+}
 
 contract THE_MONOPOLY_CLUB {
+
+    TRC20_Interface USDT_Contract;
+
+    TRC20_Interface OTRO_Contract;
 
     struct User {
         uint id;
@@ -38,23 +55,25 @@ contract THE_MONOPOLY_CLUB {
     event SentExtraEthDividends(address indexed from, address indexed receiver, uint8 matrix, uint8 level);
 
 
-    constructor(address payable ownerAddress) public {
-        levelPrice[1] = 100 trx;
-        levelPrice[2] = 200 trx;
-        levelPrice[3] = 400 trx;
-        levelPrice[4] = 800 trx;
-        levelPrice[5] = 1600 trx;
-        levelPrice[6] = 3200 trx;
-        levelPrice[7] = 6400 trx;
-        levelPrice[8] = 12800 trx;
-        levelPrice[9] = 25600 trx;
-        levelPrice[10] = 51200 trx;
-        levelPrice[11] = 102400 trx;
-        levelPrice[12] = 204800 trx;
-        levelPrice[13] = 358400 trx;
-        levelPrice[14] = 627200 trx;
-        levelPrice[15] = 1097600 trx;
+    constructor(address payable ownerAddress, address _tokenUSDT, address _tokenOTRO) public {
+        levelPrice[1] = 100 *1000000;
+        levelPrice[2] = 200 *1000000;
+        levelPrice[3] = 400 *1000000;
+        levelPrice[4] = 800 *1000000;
+        levelPrice[5] = 1600 *1000000;
+        levelPrice[6] = 3200 *1000000;
+        levelPrice[7] = 6400 *1000000;
+        levelPrice[8] = 12800 *1000000;
+        levelPrice[9] = 25600 *1000000;
+        levelPrice[10] = 51200 *1000000;
+        levelPrice[11] = 102400 *1000000;
+        levelPrice[12] = 204800 *1000000;
+        levelPrice[13] = 358400 *1000000;
+        levelPrice[14] = 627200 *1000000;
+        levelPrice[15] = 1097600 *1000000;
 
+        USDT_Contract = TRC20_Interface(_tokenUSDT);
+        OTRO_Contract = TRC20_Interface(_tokenOTRO);
 
         owner = ownerAddress;
 
@@ -80,10 +99,40 @@ contract THE_MONOPOLY_CLUB {
         registration(msg.sender, bytesToAddress(msg.data));
     }
 
+    function ChangeTokenUSDT(address _tokenTRC20) public returns (bool){
+
+        require( msg.sender == owner );
+
+        USDT_Contract = TRC20_Interface(_tokenTRC20);
+
+        return true;
+
+    }
+
+    function ChangeTokenOTRO(address _tokenTRC20) public returns (bool){
+
+        require( msg.sender == owner );
+
+        OTRO_Contract = TRC20_Interface(_tokenTRC20);
+
+        return true;
+
+    }
+
 
     function withdrawLostTRXFromBalance() public {
         require(msg.sender == owner, "onlyOwner");
         owner.transfer(address(this).balance);
+    }
+
+    function withdrawLostUSDTFromBalance() public {
+        require(msg.sender == owner, "onlyOwner");
+        USDT_Contract.transfer(owner, USDT_Contract.balanceOf(address(this)));
+    }
+
+    function withdrawLostOTROFromBalance() public {
+        require(msg.sender == owner, "onlyOwner");
+        OTRO_Contract.transfer(owner, OTRO_Contract.balanceOf(address(this)));
     }
 
 
