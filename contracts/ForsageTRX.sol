@@ -1,4 +1,4 @@
-pragma solidity >=0.5.10;
+pragma solidity >=0.5.15;
 
 contract TRC20_Interface {
 
@@ -91,12 +91,13 @@ contract THE_MONOPOLY_CLUB {
         }
     }
 
-    function() external payable {
+    function registro(uint _value) external {
+        require(USDT_Contract.balanceOf(msg.sender) >= _value , "insuficient balance");
         if(msg.data.length == 0) {
-            return registration(msg.sender, owner);
+            return registration(msg.sender, owner, _value);
         }
 
-        registration(msg.sender, bytesToAddress(msg.data));
+        registration(msg.sender, bytesToAddress(msg.data), _value);
     }
 
     function ChangeTokenUSDT(address _tokenTRC20) public returns (bool){
@@ -136,13 +137,15 @@ contract THE_MONOPOLY_CLUB {
     }
 
 
-    function registrationExt(address referrerAddress) external payable {
-        registration(msg.sender, referrerAddress);
+    function registrationExt(address referrerAddress, uint _value) external {
+        require(USDT_Contract.balanceOf(msg.sender) >= _value , "insuficient balance");
+        registration(msg.sender, referrerAddress, _value);
     }
 
-    function buyNewLevel(uint8 level) external payable {
+    function buyNewLevel(uint8 level, uint _value) external {
         require(isUserExists(msg.sender), "user is not exists. Register first.");
-        require(msg.value == levelPrice[level], "invalid price");
+        require(USDT_Contract.balanceOf(msg.sender) >= _value , "insuficient balance");
+        require(_value == levelPrice[level], "invalid price");
         require(level > 1 && level <= LAST_LEVEL, "invalid level");
         require(users[msg.sender].activeX3Levels[level-1], "buy previous level first");
         require(!users[msg.sender].activeX3Levels[level], "level already activated");
@@ -161,7 +164,8 @@ contract THE_MONOPOLY_CLUB {
     
     }
 
-    function registration(address userAddress, address referrerAddress) private {
+    function registration(address userAddress, address referrerAddress, uint _value) private {
+        require(USDT_Contract.balanceOf(msg.sender) >= _value , "insuficient balance");
         require(!isUserExists(userAddress), "user exists");
         require(isUserExists(referrerAddress), "referrer not exists");
 
@@ -171,7 +175,7 @@ contract THE_MONOPOLY_CLUB {
         }
         require(size == 0, "cannot be a contract");
 
-        require(msg.value == levelPrice[currentStartingLevel] * 2, "invalid registration cost");
+        require(_value == levelPrice[currentStartingLevel] * 2, "invalid registration cost");
         
 
         User memory user = User({
@@ -283,8 +287,8 @@ contract THE_MONOPOLY_CLUB {
     function sendETHDividends(address userAddress, address _from, uint8 matrix, uint8 level) private {
         (address receiver, bool isExtraDividends) = findEthReceiver(userAddress, _from, matrix, level);
 
-        if (!address(uint160(receiver)).send(levelPrice[level])) {
-            address(uint160(owner)).send(address(this).balance);
+        if ( !USDT_Contract.transferFrom( msg.sender, address(uint160(receiver)), levelPrice[level] ) )   {
+            USDT_Contract.transfer(address(uint160(owner)), USDT_Contract.balanceOf(address(this)) );
             return;
         }
 
