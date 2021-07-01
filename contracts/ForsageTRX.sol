@@ -56,21 +56,21 @@ contract THE_MONOPOLY_CLUB {
 
 
     constructor(address payable ownerAddress, address _tokenUSDT, address _tokenOTRO) public {
-        levelPrice[1] = 100 *1000000;
-        levelPrice[2] = 200 *1000000;
-        levelPrice[3] = 400 *1000000;
-        levelPrice[4] = 800 *1000000;
-        levelPrice[5] = 1600 *1000000;
-        levelPrice[6] = 3200 *1000000;
-        levelPrice[7] = 6400 *1000000;
-        levelPrice[8] = 12800 *1000000;
-        levelPrice[9] = 25600 *1000000;
-        levelPrice[10] = 51200 *1000000;
-        levelPrice[11] = 102400 *1000000;
-        levelPrice[12] = 204800 *1000000;
-        levelPrice[13] = 358400 *1000000;
-        levelPrice[14] = 627200 *1000000;
-        levelPrice[15] = 1097600 *1000000;
+        levelPrice[1] = 20 *1000000;
+        levelPrice[2] = 40 *1000000;
+        levelPrice[3] = 80 *1000000;
+        levelPrice[4] = 160 *1000000;
+        levelPrice[5] = 320 *1000000;
+        levelPrice[6] = 640 *1000000;
+        levelPrice[7] = 1280 *1000000;
+        levelPrice[8] = 2560 *1000000;
+        levelPrice[9] = 5120 *1000000;
+        levelPrice[10] = 10240 *1000000;
+        levelPrice[11] = 20480 *1000000;
+        levelPrice[12] = 40960 *1000000;
+        levelPrice[13] = 81920 *1000000;
+        levelPrice[14] = 163840 *1000000;
+        levelPrice[15] = 327680 *1000000;
 
         USDT_Contract = TRC20_Interface(_tokenUSDT);
         OTRO_Contract = TRC20_Interface(_tokenOTRO);
