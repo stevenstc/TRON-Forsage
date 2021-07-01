@@ -3,7 +3,6 @@ import TronWeb from "tronweb";
 
 import Utils from "../../utils";
 import CrowdFunding from "../CrowdFunding";
-import Datos from "../Datos";
 import Oficina from "../Oficina";
 import TronLinkInfo from "../TronLinkInfo";
 import TronLinkGuide from "../TronLinkGuide";
@@ -144,9 +143,7 @@ class App extends Component {
         </div>  
       </section>
 
-      <Oficina />   
-
-      <Datos />    
+      <Oficina /> 
 
       </>
     );

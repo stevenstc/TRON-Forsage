@@ -28,18 +28,13 @@ export default class EarnTron extends Component {
   async estado(){
 
 
-    var min = await Utils.contract.MIN_DEPOSIT().call();
+    var min = 0;
 
     min = parseInt(min._hex)/1000000;
 
 
-    var tarifa = await Utils.contract.tarifa().call();
-
-    tarifa = parseInt(tarifa._hex);
-
     this.setState({
-      min: min,
-      tarifa: tarifa
+      min: min
     });
 
     //console.log(min);

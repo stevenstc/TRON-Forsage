@@ -27,7 +27,6 @@ export default class EarnTron extends Component {
 
   async componentDidMount() {
     await Utils.setContract(window.tronWeb, contractAddress);
-    setInterval(() => this.Investors(),1000);
     setInterval(() => this.Link(),1000);
   };
 
