@@ -1,8 +1,7 @@
 const proxy = "https://proxy-ewozx.herokuapp.com/";
-const PRU = "shasta.";// shasta1. para inhabilitar red de pruebas
 
-const WS = "T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb";//T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb recibe los huerfanos por defecto
+const SC = "TQMpFtCgDJaJondLpFUbyTHMbeNQoEhKEV";// direccion del contrato
 
-const SC = "TCTSa54izTpEoB6o5UAKYJzw6aCSmUhBVt";// direccion del contrato
+const DT = "TExwHCjZYbb7ToQUfQY5JgumwbcXAgeaVd";// direccion del Token TRC 20
 
-export default {proxy, PRU, WS,  SC};
+export default {proxy, SC, DT};

@@ -27,20 +27,27 @@ export default class EarnTron extends Component {
 
   async componentDidMount() {
     await Utils.setContract(window.tronWeb, contractAddress);
-    setInterval(() => this.Link(),1000);
+    setInterval(() => this.Link(),1*1000);
+
+    setInterval(() => this.Investors(),2*1000);
   };
 
   async Link() {
-    const {registered} = this.state;
-    if(registered){
+
+    let mydireccion = await window.tronWeb.trx.getAccount();
+      mydireccion = window.tronWeb.address.fromHex(mydireccion.address);
+
+      var user = await Utils.contract.users(mydireccion).call();
+
+    if( await Utils.contract.isUserExists(mydireccion).call() ){
 
       let loc = document.location.href;
       if(loc.indexOf('?')>0){
         loc = loc.split('?')[0]
       }
-      let mydireccion = await window.tronWeb.trx.getAccount();
-      mydireccion = window.tronWeb.address.fromHex(mydireccion.address)
-      mydireccion = loc+'?ref='+mydireccion;
+      
+
+      mydireccion = loc+'?ref='+parseInt(user.id._hex);
       this.setState({
         link: mydireccion,
       });
@@ -54,20 +61,39 @@ export default class EarnTron extends Component {
 
   async Investors() {
 
-    let direccion = await window.tronWeb.trx.getAccount();
-    let esto = await Utils.contract.investors(direccion.address).call();
-    let My = await Utils.contract.MYwithdrawable().call();
-    //console.log(esto);
-    //console.log(My);
+    var direccion = await window.tronWeb.trx.getAccount();
+    var direccion = window.tronWeb.address.fromHex(direccion.address);
+
+    var activeLevels = 0;
+
+    var canasta = [];
+
+    for (var i = 15; i >= 0; i--) {
+
+      if (await Utils.contract.usersActiveX3Levels(direccion, i).call()) {
+        activeLevels++ ;
+        var matrix = await Utils.contract.usersX3Matrix(direccion, i).call();
+        canasta[i] = (
+          <div className="col-sm-4 single-services" key={"level"+i}>
+            <h4 className="pt-30 pb-20">Nivel {i}</h4>
+            <p>
+              personas {matrix[1].length}| ciclos {parseInt(matrix[1].length/3)}
+            </p>
+          </div>);
+      }
+
+
+      
+    }
+
+
+ 
+
+
+
     this.setState({
-      direccion: window.tronWeb.address.fromHex(direccion.address),
-      registered: esto.registered,
-      balanceRef: parseInt(esto.balanceRef._hex)/1000000,
-      totalRef: parseInt(esto.totalRef._hex)/1000000,
-      invested: parseInt(esto.invested._hex)/1000000,
-      paidAt: parseInt(esto.paidAt._hex)/1000000,
-      my: parseInt(My.amount._hex)/1000000,
-      withdrawn: parseInt(esto.withdrawn._hex)/1000000
+      canastas:canasta
+
     });
 
   };
@@ -120,43 +146,8 @@ export default class EarnTron extends Component {
           </header>
 
           <div className="row">
-            <div className="col-sm-4 single-services">
-              <h4 className="pt-30 pb-20">{invested} TRX</h4>
-              <p>
-                Total invested
-              </p>
-            </div>
 
-            <div className="col-sm-4 single-services">
-              <h4 className="pt-30 pb-20">{totalRef} TRX</h4>
-              <p>
-                Total earnings from referrals
-              
-              </p>
-            </div>
-
-            <div className="col-sm-4 single-services">
-              <h4 className="pt-30 pb-20">{my} TRX</h4>
-              <p>
-                My Profits
-              </p>
-            </div>
-
-            <div className="col-sm-4 single-services">
-              <h4 className="pt-30 pb-20">{available} TRX</h4>
-              <p>
-                Available 
-              </p>
-              <button type="button" className="btn btn-primary" onClick={() => this.withdraw()}>Withdrawal</button>
-            </div>
-
-            <div className="col-sm-4 single-services">
-              <h4 className="pt-30 pb-20">{withdrawn} TRX</h4>
-              <p>
-                withdrawn
-              
-              </p>
-            </div>
+            {this.state.canastas}
                     
           </div>
         </div>  

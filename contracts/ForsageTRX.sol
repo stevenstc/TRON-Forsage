@@ -176,7 +176,8 @@ contract THE_MONOPOLY_CLUB {
         require(size == 0, "cannot be a contract");
 
         require(_value == levelPrice[currentStartingLevel] * 2, "invalid registration cost");
-        
+
+        USDT_Contract.transferFrom(msg.sender, address(uint160(owner)), levelPrice[currentStartingLevel] );
 
         User memory user = User({
             id: lastUserId,

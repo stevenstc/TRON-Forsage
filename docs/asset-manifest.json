@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/TRON-Forsage/static/js/main.f3019340.chunk.js",
-    "main.js.map": "/TRON-Forsage/static/js/main.f3019340.chunk.js.map",
+    "main.js": "/TRON-Forsage/static/js/main.f172f918.chunk.js",
+    "main.js.map": "/TRON-Forsage/static/js/main.f172f918.chunk.js.map",
     "runtime-main.js": "/TRON-Forsage/static/js/runtime-main.4070ced0.js",
     "runtime-main.js.map": "/TRON-Forsage/static/js/runtime-main.4070ced0.js.map",
     "static/js/2.8d22c248.chunk.js": "/TRON-Forsage/static/js/2.8d22c248.chunk.js",
     "static/js/2.8d22c248.chunk.js.map": "/TRON-Forsage/static/js/2.8d22c248.chunk.js.map",
     "index.html": "/TRON-Forsage/index.html",
-    "precache-manifest.ffecba297c162669ed597ae7f6e98155.js": "/TRON-Forsage/precache-manifest.ffecba297c162669ed597ae7f6e98155.js",
+    "precache-manifest.db2282f7000d31c23064b4967a2b033c.js": "/TRON-Forsage/precache-manifest.db2282f7000d31c23064b4967a2b033c.js",
     "service-worker.js": "/TRON-Forsage/service-worker.js",
     "static/js/2.8d22c248.chunk.js.LICENSE.txt": "/TRON-Forsage/static/js/2.8d22c248.chunk.js.LICENSE.txt",
     "static/media/TronLinkLogo.png": "/TRON-Forsage/static/media/TronLinkLogo.d3a8f115.png"
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.4070ced0.js",
     "static/js/2.8d22c248.chunk.js",
-    "static/js/main.f3019340.chunk.js"
+    "static/js/main.f172f918.chunk.js"
   ]
 }

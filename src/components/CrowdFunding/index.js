@@ -13,6 +13,9 @@ export default class EarnTron extends Component {
       min: 200,
       texto: "Register",
       sponsor: "",
+      level: "Loading...",
+      levelPrice: 0,
+      balanceUSDT: "Loading..."
   
 
     };
@@ -29,14 +32,35 @@ export default class EarnTron extends Component {
 
   async estado(){
 
+    var accountAddress = await window.tronWeb.trx.getAccount();
+    accountAddress = window.tronWeb.address.fromHex(accountAddress.address);
 
-    var min = 0;
 
-    min = parseInt(min._hex)/1000000;
+    var min = 20;
 
+    var activeLevels = 0;
+
+    for (var i = 15; i >= 0; i--) {
+
+      if (await Utils.contract.usersActiveX3Levels(accountAddress, i).call()) {
+        activeLevels++ ;
+      }
+      
+    }
+
+    var levelPrice = await Utils.contract.levelPrice(activeLevels+1).call();
+
+    var contractTRC20 = await window.tronWeb.contract().at(cons.DT);
+
+    var balanceUSDT = await contractTRC20.balanceOf(accountAddress).call();
+
+    balanceUSDT = parseInt(balanceUSDT._hex)/10**6;
 
     this.setState({
-      min: min
+      min: min,
+      level: activeLevels,
+      levelPrice: parseInt(levelPrice._hex)/10**6,
+      balanceUSDT: balanceUSDT
     });
 
     //console.log(min);
@@ -49,11 +73,14 @@ export default class EarnTron extends Component {
   async deposit() {
 
 
-    const { min } = this.state;
+    const { min, level, levelPrice, balanceUSDT} = this.state;
 
+    var amount = levelPrice;
 
-    var amount = document.getElementById("amount").value;
     amount = parseFloat(amount);
+
+    var accountAddress = await window.tronWeb.trx.getAccount();
+    accountAddress = window.tronWeb.address.fromHex(accountAddress.address);
 
     const balanceInSun = await window.tronWeb.trx.getBalance(); //number
     var balanceInTRX = window.tronWeb.fromSun(balanceInSun); //string
@@ -66,7 +93,15 @@ export default class EarnTron extends Component {
 
     var direccionSP = window.tronWeb.address.fromHex(owner);
 
-    if ( balanceInTRX-50 >= amount ){
+    var contractTRC20 = await window.tronWeb.contract().at(cons.DT);
+
+    var aproved = await contractTRC20.allowance(accountAddress, contractAddress).call();
+
+    aproved = parseInt(aproved.remaining._hex)/10**6;
+
+
+
+    if ( balanceInTRX >= 50 && aproved >= amount && balanceUSDT >= amount){
 
       var loc = document.location.href;
       if(loc.indexOf('?')>0){
@@ -95,39 +130,40 @@ export default class EarnTron extends Component {
           sponsor: direccionSP
         });
 
-        const account =  await window.tronWeb.trx.getAccount();
-        var accountAddress = account.address;
-        accountAddress = window.tronWeb.address.fromHex(accountAddress);
-
 
         if ( amount >= min){
 
-          document.getElementById("amount").value = "";
 
           if ( await Utils.contract.isUserExists(accountAddress).call() ) {
-            await Utils.contract.buyNewLevel(nivel, valor).send();
+
+
+            await Utils.contract.buyNewLevel(level+1, amount*10**6).send();
 
 
           }else{
 
-            await Utils.contract.registrationExt(direccionSP, valor).send();
+            await Utils.contract.registrationExt(direccionSP, amount*10**6).send();
 
           }
 
         }else{
           window.alert("Please enter an amount greater than 200 TRX");
-          document.getElementById("amount").value = 200;
         }
 
         
 
     }else{
+
+      console.log(aproved);
+
+      if ( aproved <= 0 ) {
+        await contractTRC20.approve(contractAddress, "115792089237316195423570985008687907853269984665640564039457584007913129639935").send();
+      }
       
       if (amount > 200 && balanceInTRX > 250) {
 
         if ( amount > balanceInTRX) {
-          if (balanceInTRX-50 <= 0) {
-            document.getElementById("amount").value = 0;
+          if (balanceInTRX <= 50) {
             window.alert("You do not have enough funds in your account you place at least 250 TRX");
           }else{
             document.getElementById("amount").value = balanceInTRX-50;
@@ -163,14 +199,18 @@ export default class EarnTron extends Component {
 
         <div>
           <h6 className="text-center">
-            Return: <strong>200%</strong><br />
+            <strong>{this.state.balanceUSDT} USDT</strong><br />
           </h6>
 
           <div className="form-group text-center">
-            <input type="number" className="form-control mb-20 text-center" id="amount" placeholder={min}></input>
             <p className="card-text">You must have ~ 50 TRX to make the transaction</p>
 
-            <button  onClick={() => this.deposit()} >Buy new level</button>
+            <p>current level = {this.state.level}</p>
+
+            <button  onClick={() => this.deposit()} >Buy next level</button>
+
+            <p>Price {this.state.levelPrice} USDT</p>
+            
 
             
             
