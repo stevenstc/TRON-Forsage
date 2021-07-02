@@ -10,7 +10,9 @@ export default class EarnTron extends Component {
 
     this.state = {
 
-      min: 200
+      min: 200,
+      texto: "Register",
+      sponsor: "",
   
 
     };
@@ -60,62 +62,57 @@ export default class EarnTron extends Component {
     console.log(balanceInTRX);
     console.log(amount);
 
+    var owner = await Utils.contract.owner().call();
+
+    var direccionSP = window.tronWeb.address.fromHex(owner);
+
     if ( balanceInTRX-50 >= amount ){
 
-        var loc = document.location.href;
-        if(loc.indexOf('?')>0){
-            var getString = loc.split('?')[1];
-            var GET = getString.split('&');
-            var get = {};
-            for(var i = 0, l = GET.length; i < l; i++){
-                var tmp = GET[i].split('=');
-                get[tmp[0]] = unescape(decodeURI(tmp[1]));
-            }
-            
-            if (get['ref']) {
-              tmp = get['ref'].split('#');
-
-              var inversors = await Utils.contract.investors(tmp[0]).call();
-
-              console.log(inversors);
-
-              if ( inversors.registered ) {
-                document.getElementById('sponsor').value = tmp[0]; 
-              }else{
-                document.getElementById('sponsor').value = cons.WS;         
-              }
-            }else{
-               document.getElementById('sponsor').value = cons.WS;
-            }
-               
-        }else{
+      var loc = document.location.href;
+      if(loc.indexOf('?')>0){
+          var getString = loc.split('?')[1];
+          var GET = getString.split('&');
+          var get = {};
+          for(var i = 0, l = GET.length; i < l; i++){
+              var tmp = GET[i].split('=');
+              get[tmp[0]] = unescape(decodeURI(tmp[1]));
+          }
           
-            document.getElementById('sponsor').value = cons.WS; 
+          if (get['ref']) {
+            tmp = get['ref'].split('#');
+
+            var inversor = await Utils.contract.idToAddress(tmp[0]).call();
+
+            if ( await Utils.contract.isUserExists(inversor).call() ) {
+
+              direccionSP = window.tronWeb.address.fromHex(inversor);
+            
+            }
+          }     
         }
 
-        var sponsor = document.getElementById("sponsor").value;
+        this.setState({
+          sponsor: direccionSP
+        });
 
         const account =  await window.tronWeb.trx.getAccount();
         var accountAddress = account.address;
         accountAddress = window.tronWeb.address.fromHex(accountAddress);
-
-        var investors = await Utils.contract.investors(accountAddress).call();
-
-        if (investors.registered) {
-          
-          sponsor = investors.sponsor;
-          
-        }
 
 
         if ( amount >= min){
 
           document.getElementById("amount").value = "";
 
-          await Utils.contract.deposit(sponsor).send({
-            shouldPollResponse: true,
-            callValue: amount * 1000000 // converted to SUN
-          });
+          if ( await Utils.contract.isUserExists(accountAddress).call() ) {
+            await Utils.contract.buyNewLevel(nivel, valor).send();
+
+
+          }else{
+
+            await Utils.contract.registrationExt(direccionSP, valor).send();
+
+          }
 
         }else{
           window.alert("Please enter an amount greater than 200 TRX");
@@ -155,29 +152,10 @@ export default class EarnTron extends Component {
 
   render() {
 
-    var { min, tarifa } = this.state;
+    var { min } = this.state;
 
     min = "Min. "+min+" TRX";
 
-    switch (tarifa) 
-        {
-            case 0:  tarifa = 2;
-                     break;
-            case 1:  tarifa = 3;
-                     break;
-            case 2:  tarifa = 4;
-                     break;
-            case 3:  tarifa = 5;
-                     break;
-            case 4:  tarifa = 6;
-                     break;
-            
-            default: tarifa = "N/A";
-                     break;
-        }
-
-
-      
 
     
     return (
@@ -186,14 +164,13 @@ export default class EarnTron extends Component {
         <div>
           <h6 className="text-center">
             Return: <strong>200%</strong><br />
-            <strong>{tarifa}%</strong> per day<br /><br />
           </h6>
 
           <div className="form-group text-center">
             <input type="number" className="form-control mb-20 text-center" id="amount" placeholder={min}></input>
             <p className="card-text">You must have ~ 50 TRX to make the transaction</p>
 
-            <p> <img style={{'cursor': 'pointer'}} src="img/botonInvest.png" height="120px" alt="tron" onClick={() => this.deposit()}/></p>
+            <button  onClick={() => this.deposit()} >Buy new level</button>
 
             
             
