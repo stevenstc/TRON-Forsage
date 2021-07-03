@@ -142,7 +142,7 @@ export default class EarnTron extends Component {
 
           }else{
 
-            await Utils.contract.registrationExt(direccionSP, amount*10**6).send();
+            await Utils.contract.registrationExt(direccionSP, 2*amount*10**6).send();
 
           }
 
