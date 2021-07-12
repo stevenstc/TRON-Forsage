@@ -53,22 +53,22 @@ export default class TronLinkInfo extends Component {
 
 
   render() {
-    const { accountAddress, accountBalance, accountBandwidth} = this.state;
+    const { accountAddress, accountBalance } = this.state;
     return (
 
+      <>
+        
+        <h2>
+          Wallet Conected:
+        </h2>
+        <p>
+            <strong>{accountAddress}</strong><br/><br/>
 
-          <div>
-            <h5 className="text-center">Connected Wallet</h5>
-            <h6 className="text-center">
-              Address:<br></br>
-               <strong><span style={{'fontSize': '11px'}}>{accountAddress}</span></strong><br></br><br></br>
-              Balance:<br></br>
-               <strong><span>{accountBalance} TRX</span></strong><br></br><br></br>
-              Bandwidth:<br></br>
-               <strong><span>{accountBandwidth}</span></strong><br></br>
-              
-            </h6>
-          </div>
+          <strong>Balance:</strong><br/>
+            {accountBalance} <strong>TRX</strong><br/>
+            
+        </p>
+      </>
 
     
     );

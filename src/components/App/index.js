@@ -122,28 +122,26 @@ class App extends Component {
 
       <>
 
-      <section className="convert-area" id="convert">
+<section className="hero set-bg" data-setbg="img/hero-bg.jpg" style={{"backgroundImage": "url('img/hero-bg.jpg')"}}>
         <div className="container">
-          <div className="convert-wrap">
-            <div className="row justify-content-center align-items-center flex-column pb-30">
-              <h1 className="text-white">Make your investment</h1>           
+            <div className="row">
+                <div className="col-lg-5">
+                    <div className="hero__text">
+                        <TronLinkInfo />
+                    </div>
+                </div>
+                <div className="col-lg-5 offset-lg-2">
+                    <div className="hero__form">
+                        
+                        <CrowdFunding />
+                        
+                    </div>
+                </div>
             </div>
-            <div className="row justify-content-center align-items-start">
+        </div>
+    </section>
 
-              <div className="col-lg-6 cols">
-                <CrowdFunding />
-              </div>
-
-              <div className="col-lg-6 cols">
-                <TronLinkInfo />
-              </div>              
-              
-            </div>            
-          </div>
-        </div>  
-      </section>
-
-      <Oficina /> 
+        <Oficina /> 
 
       </>
     );

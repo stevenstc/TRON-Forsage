@@ -197,24 +197,17 @@ export default class EarnTron extends Component {
     return (
       
 
-        <div>
-          <h6 className="text-center">
-            <strong>{this.state.balanceUSDT} USDT</strong><br />
+        <div className="text-center">
+          <h6>
+            Balance: {this.state.balanceUSDT} <strong>USDT</strong><br />
           </h6>
 
-          <div className="form-group text-center">
-            <p className="card-text">You must have ~ 50 TRX to make the transaction</p>
+          <h3>current level = {this.state.level}</h3>
 
-            <p>current level = {this.state.level}</p>
-
-            <button  onClick={() => this.deposit()} >Buy next level</button>
-
+            <button  onClick={() => this.deposit()} className="primary-btn">Buy next level</button>
             <p>Price {this.state.levelPrice} USDT</p>
+            <p>You must have ~ 50 TRX to make the transaction</p>
             
-
-            
-            
-          </div>
           
         </div>
       
