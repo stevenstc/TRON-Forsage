@@ -1,310 +1,3642 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js css-menubar" lang="en">
+  <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
+  <script src="files/1185331388499403" async=""></script>
+  <script async="" src="files/fbevents.js.descarga"></script>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Loanday Template">
-    <meta name="keywords" content="Loanday, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TMC | The Monopoly Club</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+    />
+    <meta name="description" content="bootstrap material admin template" />
+    <meta name="author" content="" />
+    <title>Forsage | Dashboard</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="files/Qz1JI3jKPnt9NwuKnYPNmoYn8JE.js.descarga"></script>
+    <script src="files/dcYU3Sp71FRO2FBYwpok8r5IrpQ.js.descarga"></script>
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
+    <link rel="stylesheet" href="files/all.min.css" />
+    <link rel="stylesheet" href="files/bootstrap.min.css" />
+    <link rel="stylesheet" href="files/style.css" />
+    <link rel="stylesheet" href="files/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="files/common.css" />
+    <link rel="stylesheet" href="files/main.css" />
+    <link rel="stylesheet" href="files/alertify.min.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://forsagetron.io/dashboard/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="https://forsagetron.io/image/png"
+      sizes="32x32"
+      href="https://forsagetron.io/dashboard/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="https://forsagetron.io/image/png"
+      sizes="16x16"
+      href="https://forsagetron.io/dashboard/img/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="https://forsagetron.io/img/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="files/favicon.ico" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css"
+    />
+    <link
+      href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"
+    />
+    <script src="https://use.fontawesome.com/e91dc41f3e.js"></script>
 
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+    <meta name="apple-mobile-web-app-title" content="Forsagetron" />
+    <meta name="application-name" content="Forsagetron" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta
+      name="msapplication-config"
+      content="/img/favicon/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__search">
-            <i class="fa fa-search search-switch"></i>
+    <style type="text/css">
+      .ajs-content {
+        color: #fff;
+      }
+      .ajs-content a {
+        color: #007bff;
+      }
+
+      #greeting {
+        color: white;
+        position: relative;
+        animation-name: example;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes example {
+        0% {
+          color: #dd74c8;
+        }
+        25% {
+          color: #ffffff;
+        }
+        50% {
+          color: #00b0c2;
+        }
+        75% {
+          color: #ffffff;
+        }
+        100% {
+          color: white;
+        }
+      }
+
+      .status-panel_partners .area-text > span {
+        font-size: 9.3pt;
+        color: #fff;
+      }
+
+      .border-gradient {
+        position: relative;
+        border: 1px solid #30a7e0;
+        border-radius: 9px;
+        box-shadow: inset 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.25);
+        background-color: #131519;
+      }
+
+      .status-panel_money__eth {
+        position: absolute;
+        right: 7px;
+        bottom: -30px;
+        background-image: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+        color: #fff;
+        padding: 3px 15px;
+        border-radius: 3px;
+        font-weight: 700;
+        box-shadow: var(--box-shadow-black);
+        font-size: 12pt;
+      }
+
+      .status-panel_money_total__eth {
+        font-size: 15pt;
+        color: #fff;
+        white-space: nowrap;
+        padding: 3px 10px;
+        background: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+        margin-top: 15px;
+        border-radius: 3px;
+        box-shadow: var(--box-shadow-black);
+        text-align: center;
+        position: relative;
+        -webkit-animation: mover 1s infinite alternate;
+        animation: mover 1s infinite alternate;
+        border-radius: 5%;
+      }
+      .status-panel_money_total__dollars {
+        font-size: 16pt;
+        /*color: #ffa243;*/
+      }
+
+      .status-panel_money__dollars {
+        position: relative;
+        bottom: -7px;
+        text-align: left;
+        font-weight: 600;
+        margin-left: -3px;
+        margin-bottom: -15px;
+        /*color: #ffa243;*/
+        font-size: 12pt;
+      }
+
+      #info_modal .modal-dialog .modal-content {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(assets/images/infomodal.png);
+      }
+
+      #info_modal .modal-dialog .modal-content .modal-header {
+        /*background-color: blue;*/
+        background: linear-gradient(45deg, #1c65c9 0%, #2c80ff 100%);
+      }
+      #info_modal .modal-dialog .modal-content .modal-header h5 {
+        color: white !important;
+        font-weight: 800 !important;
+      }
+
+      #info_modal .modal-dialog .modal-content p {
+        color: white !important;
+      }
+
+      #info_modal .modal-dialog .modal-content .modal-body {
+        padding: 30px;
+      }
+
+      .notice-bg {
+        background-image: url(assets/images/notice.png);
+      }
+
+      .web-site-coming-soon {
+        background-image: url(assets/images/web-site-coming-soon.jpg);
+        height: 342px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100% 100%;
+      }
+
+      body {
+        background-image: url(assets/images/body-bg.png);
+        background-color: #16181d;
+        color: #a1abbd;
+        font-family: "Ubuntu", Arial, "Helvetica Neue", Helvetica, serif,
+          sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        /*line-height: 1.63;*/
+        letter-spacing: -0.001em;
+      }
+
+      /*.matrix-root__active {*/
+      /*    background-image: linear-gradient(-5deg,#00b0c2 0%,#193bb6 100%);*/
+      /*    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);*/
+      /*    opacity: 1;*/
+      /*     border: none; */
+      /*}*/
+
+      .status-panel_partners__count {
+        position: absolute;
+        right: 0;
+        top: -7px;
+      }
+      .status-panel_partners__link {
+        background-image: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+        border-radius: 3px;
+      }
+      .status-panel_wallets__btn:hover {
+        color: #fff;
+        background-image: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+      }
+
+      .status-panel_wallets__btn:hover {
+        color: #fff;
+        background-image: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+      }
+
+      .status-panel_wallets__btn {
+        background-image: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+      }
+
+      .status-panel_partners_copy {
+        position: absolute;
+        right: 18px;
+        bottom: 26px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 10pt;
+        line-height: 22px;
+        background-image: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+        padding: 0px 15px;
+        border-radius: 3px;
+        box-shadow: var(--box-shadow-black);
+        text-shadow: var(--text-shadow-black);
+        display: inline-block;
+        cursor: pointer;
+      }
+      .matrix-level__active {
+        color: #ffffff;
+      }
+
+      .tableStyle {
+        white-space: normal;
+        color: #fff;
+        font-weight: 300;
+        font-size: 13px;
+      }
+
+      .wallet div a {
+        color: #007bff !important;
+      }
+
+      .wallet div span {
+        color: #007bff !important;
+      }
+
+      .tablePartners {
+        font-size: 13px;
+      }
+
+      .user-matrix_children a {
+        color: #000;
+      }
+      /*.user-matrix_ternary .user-matrix_children > div:nth-child(1) a{*/
+      /*    color: #000;*/
+      /*}*/
+
+      /*.user-matrix_ternary .user-matrix_children > div:nth-child(2) a {*/
+      /*    margin: auto 30px;*/
+      /*    color: #000;*/
+      /*}*/
+
+      #printMe {
+        background-image: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+      }
+
+      .lang-list {
+        width: auto !important;
+        overflow: hidden;
+        transition: 0.5s;
+        background-color: #141618 !important;
+      }
+      /*.bg-sky-blue .main-landing .position-cards img {*/
+      /*    position: absolute;*/
+      /*    -webkit-animation: mover 1s infinite alternate;*/
+      /*    animation: mover 1s infinite alternate;*/
+      /*    border-radius: 5%;*/
+      /*}*/
+
+      .guide_subject__blue {
+        /* background-color: #00B0C2; */
+        background-image: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+      }
+
+      .matrix-root__nonactive {
+        background-image: linear-gradient(-5deg, #00b0c2 0%, #193bb6 100%);
+      }
+
+      @-webkit-keyframes mover {
+        0% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+        100% {
+          -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+        }
+      }
+
+      @keyframes mover {
+        0% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+        100% {
+          -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+        }
+      }
+
+      .bell {
+        /*display:block;*/
+        /*width: 40px;*/
+        /*height: 40px;*/
+        /*font-size: 40px;*/
+        /*margin:50px auto 0;*/
+        /*color: #9e9e9e;*/
+        -webkit-animation: ring 4s 0.7s ease-in-out infinite;
+        -webkit-transform-origin: 50% 4px;
+        -moz-animation: ring 4s 0.7s ease-in-out infinite;
+        -moz-transform-origin: 50% 4px;
+        animation: ring 4s 0.7s ease-in-out infinite;
+        /*transform-origin: 50% 4px;*/
+      }
+
+      @-webkit-keyframes ring {
+        0% {
+          -webkit-transform: rotateZ(0);
+        }
+        1% {
+          -webkit-transform: rotateZ(30deg);
+        }
+        3% {
+          -webkit-transform: rotateZ(-28deg);
+        }
+        5% {
+          -webkit-transform: rotateZ(34deg);
+        }
+        7% {
+          -webkit-transform: rotateZ(-32deg);
+        }
+        9% {
+          -webkit-transform: rotateZ(30deg);
+        }
+        11% {
+          -webkit-transform: rotateZ(-28deg);
+        }
+        13% {
+          -webkit-transform: rotateZ(26deg);
+        }
+        15% {
+          -webkit-transform: rotateZ(-24deg);
+        }
+        17% {
+          -webkit-transform: rotateZ(22deg);
+        }
+        19% {
+          -webkit-transform: rotateZ(-20deg);
+        }
+        21% {
+          -webkit-transform: rotateZ(18deg);
+        }
+        23% {
+          -webkit-transform: rotateZ(-16deg);
+        }
+        25% {
+          -webkit-transform: rotateZ(14deg);
+        }
+        27% {
+          -webkit-transform: rotateZ(-12deg);
+        }
+        29% {
+          -webkit-transform: rotateZ(10deg);
+        }
+        31% {
+          -webkit-transform: rotateZ(-8deg);
+        }
+        33% {
+          -webkit-transform: rotateZ(6deg);
+        }
+        35% {
+          -webkit-transform: rotateZ(-4deg);
+        }
+        37% {
+          -webkit-transform: rotateZ(2deg);
+        }
+        39% {
+          -webkit-transform: rotateZ(-1deg);
+        }
+        41% {
+          -webkit-transform: rotateZ(1deg);
+        }
+
+        43% {
+          -webkit-transform: rotateZ(0);
+        }
+        100% {
+          -webkit-transform: rotateZ(0);
+        }
+      }
+
+      @-moz-keyframes ring {
+        0% {
+          -moz-transform: rotate(0);
+        }
+        1% {
+          -moz-transform: rotate(30deg);
+        }
+        3% {
+          -moz-transform: rotate(-28deg);
+        }
+        5% {
+          -moz-transform: rotate(34deg);
+        }
+        7% {
+          -moz-transform: rotate(-32deg);
+        }
+        9% {
+          -moz-transform: rotate(30deg);
+        }
+        11% {
+          -moz-transform: rotate(-28deg);
+        }
+        13% {
+          -moz-transform: rotate(26deg);
+        }
+        15% {
+          -moz-transform: rotate(-24deg);
+        }
+        17% {
+          -moz-transform: rotate(22deg);
+        }
+        19% {
+          -moz-transform: rotate(-20deg);
+        }
+        21% {
+          -moz-transform: rotate(18deg);
+        }
+        23% {
+          -moz-transform: rotate(-16deg);
+        }
+        25% {
+          -moz-transform: rotate(14deg);
+        }
+        27% {
+          -moz-transform: rotate(-12deg);
+        }
+        29% {
+          -moz-transform: rotate(10deg);
+        }
+        31% {
+          -moz-transform: rotate(-8deg);
+        }
+        33% {
+          -moz-transform: rotate(6deg);
+        }
+        35% {
+          -moz-transform: rotate(-4deg);
+        }
+        37% {
+          -moz-transform: rotate(2deg);
+        }
+        39% {
+          -moz-transform: rotate(-1deg);
+        }
+        41% {
+          -moz-transform: rotate(1deg);
+        }
+
+        43% {
+          -moz-transform: rotate(0);
+        }
+        100% {
+          -moz-transform: rotate(0);
+        }
+      }
+
+      @keyframes ring {
+        0% {
+          transform: rotate(0);
+        }
+        1% {
+          transform: rotate(30deg);
+        }
+        3% {
+          transform: rotate(-28deg);
+        }
+        5% {
+          transform: rotate(34deg);
+        }
+        7% {
+          transform: rotate(-32deg);
+        }
+        9% {
+          transform: rotate(30deg);
+        }
+        11% {
+          transform: rotate(-28deg);
+        }
+        13% {
+          transform: rotate(26deg);
+        }
+        15% {
+          transform: rotate(-24deg);
+        }
+        17% {
+          transform: rotate(22deg);
+        }
+        19% {
+          transform: rotate(-20deg);
+        }
+        21% {
+          transform: rotate(18deg);
+        }
+        23% {
+          transform: rotate(-16deg);
+        }
+        25% {
+          transform: rotate(14deg);
+        }
+        27% {
+          transform: rotate(-12deg);
+        }
+        29% {
+          transform: rotate(10deg);
+        }
+        31% {
+          transform: rotate(-8deg);
+        }
+        33% {
+          transform: rotate(6deg);
+        }
+        35% {
+          transform: rotate(-4deg);
+        }
+        37% {
+          transform: rotate(2deg);
+        }
+        39% {
+          transform: rotate(-1deg);
+        }
+        41% {
+          transform: rotate(1deg);
+        }
+
+        43% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(0);
+        }
+      }
+
+      /*@media(min-width: 768px){*/
+      /*    .hide-desktop{*/
+      /*      display: none;   */
+      /*    }*/
+      /*    .hide-mobile{*/
+      /*      display: block;   */
+      /*    }*/
+      /*}*/
+
+      /*@media(max-width: 768px){*/
+      /*    .hide-desktop{*/
+      /*      display: block;   */
+      /*    }*/
+      /*    .hide-mobile{*/
+      /*      display: none;   */
+      /*    }*/
+      /*    .notice-new{*/
+      /*        top:0!important;*/
+      /*    }*/
+      /*}*/
+
+      .pl-5,
+      .px-5 {
+        padding-left: 4rem !important;
+      }
+
+      @media (min-width: 768px) {
+        .hide-desktop {
+          display: none;
+        }
+        .hide-mobile {
+          display: block;
+        }
+        .banner_mobile {
+          display: none;
+        }
+        .banner_desktop {
+          display: block;
+        }
+
+        .nav-desktop {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .font-size-16-16 {
+          font-size: 16px !important;
+        }
+        .hide-desktop {
+          display: block;
+        }
+        .hide-mobile {
+          display: none;
+        }
+        .banner_mobile {
+          display: block;
+        }
+        .banner_desktop {
+          display: none;
+        }
+        .pl-5,
+        .px-5 {
+          padding-left: 1rem !important;
+        }
+
+        .banner_mobile {
+          display: block;
+          margin: 20px 19% 0;
+        }
+
+        .mt-60 {
+          margin-top: 10px !important;
+        }
+        .token-calc.mt-5 {
+          margin-top: 10px !important;
+        }
+        .token-calculator .token-buy {
+          position: static;
+          /*margin-top: 20px!important;*/
+          margin: 0px 0 34px !important;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .banner_mobile {
+          display: block;
+          margin: 20px 19% 0;
+        }
+
+        .text-24 {
+          font-size: 24px !important;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .banner_mobile {
+          display: block;
+          margin: 20px 19% 0;
+        }
+        .font-size-14-14 {
+          font-size: 14px !important;
+        }
+        .font-size-16-16 {
+          font-size: 16px !important;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .banner_mobile {
+          display: block;
+          margin: 20px 15% 0;
+        }
+
+        .font-size-18 {
+          font-size: 16px !important;
+        }
+      }
+
+      @media (max-width: 425px) {
+        .banner_mobile {
+          display: block;
+          margin: 20px 8% 0;
+        }
+      }
+
+      @media (max-width: 384px) {
+        .banner_mobile {
+          display: block;
+          margin: 20px 8% 0;
+        }
+      }
+
+      @media (max-width: 375px) {
+        .banner_mobile {
+          display: block;
+          margin: 20px 3% 0;
+        }
+      }
+
+      @media (max-width: 320px) {
+        .banner_mobile {
+          display: block;
+          margin: 20px 3% 0;
+        }
+      }
+
+      /*new css navbar*/
+
+      .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem;
+        font-size: 19px;
+      }
+
+      .box {
+        position: relative;
+        border-top: 0;
+        margin-bottom: 30px;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 3px;
+        padding: 0px;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        box-shadow: 0px 0px 5px 0px rgba(71, 95, 123, 0.2);
+      }
+      .box-body {
+        padding: 1rem 1.5rem;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        border-radius: 3px;
+      }
+      .align-items-center {
+        align-items: center !important;
+      }
+
+      .box-body > *:last-child {
+        margin-bottom: 0;
+      }
+      .justify-content-between {
+        justify-content: space-between !important;
+      }
+
+      .ml-5 {
+        margin-left: 5px !important;
+      }
+      a:hover,
+      a:focus,
+      a:active {
+        outline: 0;
+        color: #ffffff;
+      }
+
+      @media (min-width: 768px) {
+        .d-md-flex {
+          display: flex !important;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .banner_desktop {
+          margin: auto 11% !important;
+        }
+      }
+      @media (max-width: 992px) {
+        .banner_desktop {
+          margin: auto 0px !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .border-bottom-i {
+          border-bottom: 1px solid #fff;
+        }
+      }
+
+      @media (max-width: 425px) {
+        /*.banner_mobile {*/
+        /*    display: block;*/
+        /*    margin: auto 9%;*/
+        /*}*/
+      }
+      @media (max-width: 375px) {
+        /*.banner_mobile {*/
+        /*    display: block;*/
+        /*    margin: auto 4%;*/
+        /*}*/
+      }
+    </style>
+    <script src="files/canvas2image.js.descarga"></script>
+
+    <script src="files/html2canvas.js.descarga"></script>
+
+    <script src="files/jspdf.min.js.descarga"></script>
+
+    <script
+      src="files/jquery-3.5.1.min.js.descarga"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <style></style>
+    <link
+      rel="stylesheet"
+      href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwPSJjb29raWxlc3MiXSB7DQogcG9zaXRpb246IGZpeGVkOw0KIHdpZHRoOiAxMDAlOw0KIGJvdHRvbTogMDsNCiBsZWZ0OiAwOw0KIHotaW5kZXg6IDEwMDAwOw0KIGxpbmUtaGVpZ2h0OiAyNHB4Ow0KfQ0KDQpjbG91ZGZsYXJlLWFwcFthcHA9ImNvb2tpbGVzcyJdIGNvb2tpbGVzcy1kaXYgew0KICB3aWR0aDogMTAwJTsNCiAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDsNCiAgY29sb3I6ICNmZmY7DQogIHBhZGRpbmc6IDEwcHg7DQogIHRleHQtYWxpZ246IGNlbnRlcjsNCiAgZGlzcGxheTogYmxvY2s7DQp9DQpjbG91ZGZsYXJlLWFwcFthcHA9ImNvb2tpbGVzcyJdIGNvb2tpbGVzcy1kaXYgLmlBY2NlcHQgew0KICBjdXJzb3I6IHBvaW50ZXI7DQogIG1hcmdpbi1sZWZ0OiAxMHB4Ow0KICBjb2xvcjogIzE1OUNEODsNCn0NCg=="
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-xl" style="background: #1e3b76">
+        <a class="navbar-brand" href="https://forsagetron.io/dashboard"
+          ><img src="files/forsagetronlogo.png" alt="" style="width: 120px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon text-white"
+            ><i
+              class="fa fa-bars"
+              aria-hidden="true"
+              style="font-size: 34px"
+            ></i
+          ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://forsagetron.io/dashboard"
+                >Matrix</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link text-white"
+                href="https://gov.forsagetron.io/"
+                target="_blank"
+                >Governance
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://defi.forsagetron.io/"
+                target="_blank"
+                >DeFi</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://defi.forsagetron.io/"
+                target="_blank"
+                >Staking</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://dex.forsagetron.io/"
+                target="_blank"
+                >Exchange</a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="https://forsagetron.io/dashboard/?#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Office
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  class="dropdown-item"
+                  href="https://forsagetron.io/dashboard/"
+                  >The main panel</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://forsagetron.io/dashboard/?partners"
+                  >Partners</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://forsagetron.io/dashboard/?statistics"
+                  >Statistics</a
+                >
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="javascript:;"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Information
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  class="dropdown-item"
+                  href="https://forsagetron.io/dashboard/?information"
+                  >Instructions</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://forsagetron.io/dashboard/assets/docs/forsage-tron-presentation.pdf"
+                  >View PDF
+                </a>
+              </div>
+            </li>
+          </ul>
+          <ul class="nav navbar-header-nav ml-auto crypto-user-btn">
+            <li class="nav-item">
+              <a class="nav-link" href="https://forsagetron.io/dashboard/?"
+                ><i class="fa fa-youtube-play" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://forsagetron.io/dashboard/?"
+                ><i class="fa fa-medium" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a
+                id="news"
+                class="nav-link"
+                href="https://forsagetron.io/dashboard/?"
+                ><i class="fa fa-newspaper"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <div class="auth-mode_view mr-2" title="Telegram">
+                <a href="https://t.me/forsagetron" target="_blank">
+                  <i class="fa fa-paper-plane" style="font-size: 16px"></i>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="auth-mode_view mr-2">
+                <a
+                  href="javascript:;"
+                  id="notification_started2"
+                  title="Click here to disable notification."
+                >
+                  <i class="fa fa-bell" style="font-size: 16px"></i>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="lang"></div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://forsagetron.io/"> Wallet </a>
+            </li>
+          </ul>
         </div>
-        <div class="offcanvas__logo">
-            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-        </div>
-        <nav class="offcanvas__menu mobile-menu">
-            <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="./services.html">Features</a></li>
-                        <li><a href="./services-details.html">Services Details</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <ul class="offcanvas__widget">
-            <li><i class="fa fa-map-marker"></i> 96 Ernser Vista Suite 437, NY, US</li>
-            <li><i class="fa fa-phone"></i> (123) 456-78-910</li>
-            <li><i class="fa fa-envelope"></i> Info@colorlib.com</li>
-        </ul>
-        <div class="offcanvas__language">
-            <img src="img/flag.png" alt="">
-            <span>English</span>
-            <i class="fa fa-angle-down"></i>
-            <ul>
-                <li><a href="#">English</a></li>
-                <li><a href="#">Bangla</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- Offcanvas Menu End -->
-
-    <!-- Header Section Begin -->
-    <header class="header">
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/the-monopoly-club.png" alt="the monopoly club"></a>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="header__nav">
-                        <nav class="header__menu">
-                            <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="https://justswap.io/?lang=en-US?tokenAddress=TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t&type=swap#/home">Buy USDT</a></li>
-                                <li><a href="https://tronscan.io/#/contract/TQn9Y2khEsLJW1ChVWFMSMeRDow5KcbLSE/code">Contract</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open">
-                <span class="fa fa-bars"></span>
-            </div>
-        </div>
+      </nav>
     </header>
-    <!-- Header Section End -->
-
-    <div id="root"></div>
-
-    <section class="choose spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Why People Choose Us</h2>
-                        <p>This question should make the viewer want to open the brochure to learn more.</p>
-                    </div>
-                </div>
+    <div class="container">
+      <div class="row px-3" style="display: none">
+        <div
+          class="box"
+          style="
+            margin-bottom: 16px;
+            background: black;
+            border: 1px solid var(--info);
+          "
+        >
+          <div class="box-body">
+            <div
+              class="
+                d-md-flex
+                justify-content-between
+                align-items-center
+                d-inline-block
+              "
+            >
+              <div class="border-bottom-i">
+                <p
+                  class="mb-1 text-fade text-white"
+                  style="font-size: 14px; font-weight: 700"
+                >
+                  ALL PARTICIPANTS
+                </p>
+                <h4 class="my-0">
+                  <img
+                    src="files/members.svg"
+                    alt=""
+                    style="width: 30px; vertical-align: text-bottom"
+                  />
+                  <span
+                    class=""
+                    style="font-size: 30px; color: #74fffa !important"
+                    >79 513</span
+                  >
+                </h4>
+              </div>
+              <div class="d-lg-block border-bottom-i">
+                <p
+                  class="mb-1 text-fade text-white"
+                  style="font-size: 14px; font-weight: 700"
+                >
+                  JOINED IN 24 HOURS
+                </p>
+                <h4 class="my-0">
+                  <img
+                    src="files/clock.svg"
+                    alt=""
+                    style="width: 30px; vertical-align: text-bottom"
+                  />
+                  <span
+                    class=""
+                    style="font-size: 30px; color: #f76bc6 !important"
+                    >+1301</span
+                  >
+                </h4>
+              </div>
+              <div class="d-lg-block border-bottom-i">
+                <p
+                  class="mb-1 text-fade text-white"
+                  style="font-size: 14px; font-weight: 700"
+                >
+                  PARTICIPANTS HAVE EARNED USD
+                </p>
+                <h4 class="my-0">
+                  <img
+                    src="files/dollar-currency-symbol.svg"
+                    alt=""
+                    style="width: 30px; vertical-align: text-bottom"
+                  />
+                  <span
+                    class=""
+                    style="font-size: 30px; color: #74fffa !important"
+                    >220 831 466</span
+                  >
+                </h4>
+              </div>
+              <div class="d-lg-block border-bottom-i">
+                <p
+                  class="mb-1 text-white"
+                  style="font-size: 14px; font-weight: 700"
+                >
+                  PARTICIPANTS HAVE EARNED TRX
+                </p>
+                <h4 class="my-0">
+                  <img
+                    src="files/trx.svg"
+                    alt=""
+                    style="width: 30px; vertical-align: text-bottom"
+                  />
+                  <span
+                    class=""
+                    style="font-size: 30px; color: #f76bc6 !important"
+                    >3 557 207 895</span
+                  >
+                </h4>
+              </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="choose__item">
-                        <img src="img/choose/choose-1.png" alt="">
-                        <h5>Quick & Easy</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="choose__item">
-                        <img src="img/choose/choose-2.png" alt="">
-                        <h5>Absolute Security</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="choose__item">
-                        <img src="img/choose/choose-3.png" alt="">
-                        <h5>Quick Approval</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="choose__item">
-                        <img src="img/choose/choose-4.png" alt="">
-                        <h5>Low Interest Rates</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="choose__item">
-                        <img src="img/choose/choose-5.png" alt="">
-                        <h5>Personal Security</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="choose__item">
-                        <img src="img/choose/choose-6.png" alt="">
-                        <h5>Disbursement Day</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Counter Begin -->
-    <div class="counter spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="counter__item">
-                        <img src="img/counter/counter-1.png" alt="">
-                        <div class="counter__number">
-                            <h2 class="counter-add">2100</h2>
-                            <span>M+</span>
-                        </div>
-                        <p>TRX invested</p>
-                    </div>
+      </div>
+      <div class="row" style="display: none">
+        <div class="col-md-4 logotype-wrapper">
+          <div class="logotype">
+            <a href="https://forsagetron.io/dashboard">
+              <img src="files/forsagetronlogo.png" alt="" />
+            </a>
+            <ul class="nav nav-desktop">
+              <li class="hide-desktop">
+                <div class="auth-mode_view mr-2" title="Forsagetron Updates">
+                  <a id="news2"><i class="fa fa-newspaper"></i></a>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="counter__item">
-                        <img src="img/counter/counter-2.png" alt="">
-                        <div class="counter__number">
-                            <h2 class="counter-add">99</h2>
-                            <span>M+</span>
-                        </div>
-                        <p>Customers</p>
-                    </div>
+              </li>
+              <li class="hide-desktop">
+                <div class="auth-mode_view mr-2">
+                  <a
+                    href="javascript:;"
+                    id="notification_started2"
+                    title="Click here to disable notification."
+                  >
+                    <i class="fa fa-bell"></i>
+                  </a>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="counter__item">
-                        <img src="img/counter/counter-3.png" alt="">
-                        <div class="counter__number">
-                            <h2 class="counter-add">90</h2>
-                            <span>+</span>
-                        </div>
-                        <p>Partners</p>
-                    </div>
+              </li>
+              <li class="hide-desktop">
+                <div class="auth-mode_view mr-2" title="Telegram">
+                  <a href="https://t.me/forsagetron" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                  </a>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="counter__item">
-                        <img src="img/counter/counter-4.png" alt="">
-                        <div class="counter__number">
-                            <h2 class="counter-add">100</h2>
-                            <span>%</span>
-                        </div>
-                        <p>Verified Contract</p>
-                    </div>
-                </div>
-            </div>
+              </li>
+            </ul>
+          </div>
         </div>
+        <div class="col-md-8 nav-wrapper">
+          <ul class="nav">
+            <li class="hide-mobile">
+              <div class="auth-mode_view mr-2" title="News">
+                <a id="news"><i class="fa fa-newspaper"></i></a>
+              </div>
+            </li>
+            <li class="hide-mobile">
+              <div class="auth-mode_view mr-2">
+                <a
+                  href="javascript:;"
+                  id="notification_started"
+                  title="Click here to disable notification."
+                >
+                  <i class="fa fa-bell"></i>
+                </a>
+              </div>
+            </li>
+            <li class="hide-mobile">
+              <div class="auth-mode_view mr-2" title="Telegram">
+                <a href="https://t.me/forsagetron" target="_blank">
+                  <i class="fab fa-telegram"></i>
+                </a>
+              </div>
+            </li>
+            <li style="display: none">
+              <div class="auth-mode_view" title="View mode">
+                <i class="fa fa-eye"></i>
+              </div>
+            </li>
+            <li>
+              <a href="https://gov.forsagetron.io/" target="_blank">Vote Now</a>
+            </li>
+            <li>
+              <a href="https://forsagetron.io/dashboard/"> Office </a>
+              <ul>
+                <li>
+                  <a href="https://forsagetron.io/dashboard/">
+                    The main panel
+                  </a>
+                </li>
+                <li>
+                  <a href="https://forsagetron.io/dashboard/?partners">
+                    Partners
+                  </a>
+                </li>
+                <li>
+                  <a href="https://forsagetron.io/dashboard/?statistics">
+                    Statistics
+                  </a>
+                </li>
+                <li style="display: none">
+                  <a href="https://forsagetron.io/dashboard/?goal"> Goal </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:;">Information</a>
+              <ul>
+                <li>
+                  <a href="https://forsagetron.io/dashboard/?information">
+                    Instructions
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://forsagetron.io/dashboard/assets/docs/forsage-tron-presentation.pdf"
+                    target="_blank"
+                  >
+                    View PDF
+                  </a>
+                </li>
+                <li>
+                  <a href="https://forsagetron.io/leaderboard" target="_blank">
+                    Leader Board
+                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <style>
+            @media screen and (max-width: 600px) {
+              .mobileSmallFont {
+                font-size: 15px;
+              }
+            }
+          </style>
+          <div class="stats-top">
+            <div class="row no-gutters align-items-center">
+              <div
+                class="
+                  col-lg-8 col-md-8 col-sm-6 col-6
+                  stats-top_sum
+                  mobileSmallFont
+                "
+                style="color: #dd74c8"
+              >
+                79 513
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-6 stats-top_subject">
+                ALL<br />PARTICIPANTS
+              </div>
+            </div>
+            <div class="row no-gutters align-items-center">
+              <div
+                class="
+                  col-lg-8 col-md-8 col-sm-6 col-6
+                  stats-top_sum
+                  mobileSmallFont
+                "
+                style="color: #1ea4c1"
+              >
+                +1301
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-6 stats-top_subject">
+                JOINED<br />IN 24 HOURS
+              </div>
+            </div>
+            <div class="row no-gutters align-items-center">
+              <div
+                class="
+                  col-lg-8 col-md-8 col-sm-6 col-6
+                  stats-top_sum
+                  mobileSmallFont
+                "
+                style="color: #a2a1f2"
+              >
+                220 831 466
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-6 stats-top_subject">
+                PARTICIPANTS<br />have EARNED USD
+              </div>
+            </div>
+            <div class="row no-gutters align-items-center">
+              <div
+                class="
+                  col-lg-8 col-md-8 col-sm-6 col-6
+                  stats-top_sum
+                  mobileSmallFont
+                "
+                style="color: #a2a1f2"
+              >
+                3 557 207 895
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-6 stats-top_subject">
+                PARTICIPANTS<br />have EARNED TRX
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="row">
+        <div class="col notice-new">
+          <div class="row" style="text-align: center">
+            <div class="col-md-3 text-right"></div>
+            <div class="col-md-9 text-left pb-3 pl-5"></div>
+          </div>
+        </div>
+      </div>
+      <script src="files/html2canvas.min.js.descarga"></script>
+
+      <style>
+        /* i.matrix-icon_cart2.matrix-icon_cart__big2.smallone {
+            font-size: 20px;
+            width: 30px;
+            top: 0;
+            right: 0;
+        }*/
+
+        #dashboard_data_loader {
+          display: none;
+          position: fixed;
+          z-index: 100;
+          background-image: url("../img/loading.gif");
+          background-color: black;
+          /*opacity: 0;*/
+          background-repeat: no-repeat;
+          background-position: center;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          top: 0;
+        }
+        .web-site-coming-soon {
+          background-position: 54% 100%;
+        }
+      </style>
+
+
+      <!-- React JS -->
+        <div id="root"></div>
+
+      <!-- End react js -->
+
+      <!-- Start DOM -->
+      
     </div>
-    <!-- Counter End -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        getX3DashboardData();
 
+        function getX3DashboardData() {
+          /*
+            var obj = $(this);
+            obj.removeClass("x3_get_level_data");
 
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__logo">
-                            <a href="./index.html"><img src="img/footer-logo.png" alt=""></a>
-                        </div>
-                        <p>Please remember though that how far you go is up to you. There is no substitute for your own
-                            work and effort in succeeding in this business.</p>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h5>Services</h5>
-                        <div class="footer__widget">
-                            <ul>
-                                <li><a href="#">Personal Loans</a></li>
-                                <li><a href="#">Business Loans</a></li>
-                                <li><a href="#">Online Cash Loans</a></li>
-                                <li><a href="#">Cash Advance</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h5>Socials</h5>
-                        <div class="footer__widget footer__widget--social">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i> Skype</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
-                    <div class="footer__widget footer__widget--address">
-                        <h5>Open Hours</h5>
-                        <p>We work all days a week, Please contact us for any inquiry.</p>
-                        <ul>
-                            <li>Monday - Friday: 11:00 am - 8:00 pm</li>
-                            <li>Saturday: 10:00 am - 6:00 pm</li>
-                            <li>Sunday: 11:00 am - 6:00 pm</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__copyright">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <ul class="footer__copyright__links">
-                            <li><a href="#">Terms of use</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Community</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <div class="footer__copyright__text">
-                            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-                        </div>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                </div>
-            </div>
+            var plan = obj.attr('x3_data_plan');
+            var level = obj.attr('x3_data_level');
+            */
+
+          var userWallet = "0x305abd3892c028aab90f7ec4453c58f7023f68b8";
+          var plan = 1;
+
+          $("#dashboard_data_loader").show();
+
+          $.ajax({
+            url: "includes/getDashboardData.php",
+            type: "POST",
+            dataType: "json",
+            data: { plan: plan, userWallet: userWallet },
+            success: function (val) {
+              console.log(val);
+
+              var reinvest = val.reinvest;
+              var reinvest_x6 = val.reinvest_x6;
+
+              $.each(val.total_member, function (index, value) {
+                $("#x3_loop_" + index + " level_members").html(value);
+                $("#x3_loop_" + index + " level_cycles").html(reinvest[index]);
+              });
+
+              $.each(val.total_member_x6, function (index, value) {
+                $("#x6_loop_" + index + " level_members").html(value);
+                $("#x6_loop_" + index + " level_cycles").html(
+                  reinvest_x6[index]
+                );
+              });
+
+              $("#dashboard_data_loader").hide();
+            },
+            /*,
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('Error Ajax request: ' + jqXHR.responseText);
+
+                }
+                */
+          });
+        }
+      });
+    </script>
+
+    <div
+      class="modal fade"
+      id="info_modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div
+          class="modal-content"
+          style="border: 1px solid var(--blue); padding: 0"
+        >
+          <div class="modal-header">
+            <h5 class="modal-title text-dark" id="exampleModalLabel">
+              FST TOKEN LAUNCHING DETAILS
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body text-dark">
+            <p>• FST Token is base of Forsagetron Ecosystem</p>
+            <p>• Available Pair - TRX/FST</p>
+            <p>• Initial launching price- $1/FST</p>
+            <p>• Total supply 720,000 FST only</p>
+            <p>• Total member till date: 72,000+</p>
+            <p>• Token:Participants ratio = 720,000 / 72,000</p>
+            <p>
+              (10:1) Each Participants will get only 10 FST Tokens per ID in 1st
+              24hrs..
+            </p>
+            <p>
+              • More Tokens can be bought in next 24hrs or till 72000 token of
+              1phase not get sold.
+            </p>
+            <p>• Total Token Distribution in 20 Phases</p>
+            <p>
+              • Phase 1 to 5 is kept reserved for forsagetron community only.
+            </p>
+            <p>
+              • In Phase-2 -72000 FST Token available for buying @ $1.26 (Buying
+              limit per ID 500FST)
+            </p>
+            <p>
+              • In Phase-3 -62000 FST Token available for buying @ $1.39 (Buying
+              limit per ID 500FST)
+            </p>
+            <p>
+              • In Phase-4 -52000 FST Token available for buying @ $1.57 (Buying
+              limit per ID 1000FST)
+            </p>
+            <p>
+              • In Phase-5 -52000 FST Token available for buying @ $1.89 (Buying
+              limit per ID 1000FST)
+            </p>
+            <p>
+              • Forsagetron member can buy more tokens at price of phase 6 -
+              $2.20/FST(See Price chart)
+            </p>
+            <p>• From Phase-6 onwards upto phase 20 No limits.</p>
+            <p>• Only buyer &amp; seller can regulate the flow of token</p>
+            <p>• Buy/Sell FST DeFi TOKEN Directly from Smart Contract</p>
+            <p>• Sell FST tokens immediatly from sell option in dashboard</p>
+            <p>
+              • Easy Distribution to provide chance to everyone,No Risk,100%
+              safe
+            </p>
+          </div>
         </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
+      </div>
     </div>
-    <!-- Search End -->
+    <style>
+      @media (min-width: 992px) {
+        .modal-lg,
+        .modal-xl {
+          max-width: 720px;
+        }
+      }
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
 
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    </style>
 
+    <div
+      class="modal fade show"
+      id="team_actiavtion"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+    >
+      <div
+        class="
+          modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl
+        "
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title text-dark" id="exampleModalLabel">
+              Forsagetron Token Distribution Chart<br />
+              <span
+                style="
+                  padding-top: 8px;
+                  margin: auto;
+                  color: #2c80ff;
+                  font-size: 16px;
+                "
+                >Token Symbol: FST, Total Supply: 720,000 only.</span
+              >
+              <span style="font-size: 12px"
+                >All unsold tokens will be burned if not mined within 45 Days of
+                time period.</span
+              >
+            </h2>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="team_a_data_loader" style="display: none"></div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Distribution Phase</th>
+                  <th scope="col">Quantity in FST</th>
+                  <th scope="col">Price(FST/USD)</th>
+                  <th scope="col">Buying limit</th>
+                  <th scope="col">Reserve for</th>
+                  <th scope="col">Launching</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="team_activation_tbody">
+                <tr>
+                  <td>Phase 1</td>
+                  <td>72,000</td>
+                  <td>$1.00</td>
+                  <td>10 Token/ID</td>
+                  <td>Forsagetron community</td>
+                  <td>Forsagetron Family Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 2</td>
+                  <td>72,000</td>
+                  <td>$1.26</td>
+                  <td>500 Token/ID</td>
+                  <td>Forsagetron community</td>
+                  <td>Forsagetron Family Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 3</td>
+                  <td>62,000</td>
+                  <td>$1.39</td>
+                  <td>500 Token/ID</td>
+                  <td>Forsagetron community</td>
+                  <td>Forsagetron Family Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 4</td>
+                  <td>52,000</td>
+                  <td>$1.57</td>
+                  <td>1000 Token/ID</td>
+                  <td>Forsagetron community</td>
+                  <td>Forsagetron Family Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 5</td>
+                  <td>52,000</td>
+                  <td>$1.89</td>
+                  <td>1000 Token/ID</td>
+                  <td>Forsagetron community</td>
+                  <td>Forsagetron Family Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 6</td>
+                  <td>42,000</td>
+                  <td>$2.20</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange launching</td>
+                  <td>International Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 7</td>
+                  <td>42,000</td>
+                  <td>$2.89</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange launching</td>
+                  <td>International Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 8</td>
+                  <td>32,000</td>
+                  <td>$3.67</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth</td>
+                  <td>International Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 9</td>
+                  <td>32,000</td>
+                  <td>$6.99</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth</td>
+                  <td>International Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 10</td>
+                  <td>26,000</td>
+                  <td>$13.74</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth</td>
+                  <td>International Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 11</td>
+                  <td>26,000</td>
+                  <td>$25.36</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth</td>
+                  <td>International Launching</td>
+                  <td><span class="text-danger">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 12</td>
+                  <td>26,000</td>
+                  <td>$47.73</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth</td>
+                  <td>International Launching</td>
+                  <td><span class="text-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 13</td>
+                  <td>26,000</td>
+                  <td>$83.13</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth</td>
+                  <td>International Launching</td>
+                  <td><span class="text-primary">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 14</td>
+                  <td>24,000</td>
+                  <td>$163.56</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth + hedging &amp; trading</td>
+                  <td>International Launching</td>
+                  <td><span class="text-primary">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 15</td>
+                  <td>24,000</td>
+                  <td>$327.22</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth + hedging &amp; trading</td>
+                  <td>International Launching</td>
+                  <td><span class="text-primary">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 16</td>
+                  <td>24,000</td>
+                  <td>$647.79</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth + hedging &amp; trading</td>
+                  <td>International Launching</td>
+                  <td><span class="text-primary">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 17</td>
+                  <td>22,000</td>
+                  <td>$1,405.11</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth + hedging &amp; trading</td>
+                  <td>International Launching</td>
+                  <td><span class="text-primary">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 18</td>
+                  <td>22,000</td>
+                  <td>$2,754.16</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth + hedging &amp; trading</td>
+                  <td>International Launching</td>
+                  <td><span class="text-primary">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 19</td>
+                  <td>22,000</td>
+                  <td>$4,736.79</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth + hedging &amp; trading</td>
+                  <td>International Launching</td>
+                  <td><span class="text-primary">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td>Phase 20</td>
+                  <td>20,000</td>
+                  <td>$9,412.46</td>
+                  <td>Open Limit</td>
+                  <td>D.Exchange + staking growth + hedging &amp; trading</td>
+                  <td>International Launching</td>
+                  <td><span class="text-primary">Upcoming</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary waves-effect waves-classic"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mb-3" style="display: none">
+      <div class="button-con">
+        <label for="cb1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            id="dayIcon"
+            x="0px"
+            y="0px"
+            viewBox="0 0 35 35"
+            style="enable-background: new 0 0 35 35"
+            xml:space="preserve"
+          >
+            <g id="Sun">
+              <g>
+                <path
+                  style="fill-rule: evenodd; clip-rule: evenodd"
+                  d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+        </label>
+        <input class="toggle" id="cb1" type="checkbox" />
+        <label class="toggle-button" for="cb1"></label>
+        <label for="cb1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            id="nightIcon"
+            x="0px"
+            y="0px"
+            viewBox="0 0 100 100"
+            enable-background="new 0 0 100 100"
+            xml:space="preserve"
+          >
+            <path
+              d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"
+            ></path>
+          </svg>
+        </label>
+      </div>
+      <script src="files/jquery.min.js.descarga"></script>
+
+      <script src="files/jquery.countdown.min.js.descarga"></script>
+      <script src="files/moment-with-locales.min.js.descarga"></script>
+      <script src="files/moment-timezone-with-data-2010-2020.min.js.descarga"></script>
+      <script src="files/countdown.init.js.descarga"></script>
+
+      <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+          m[i] =
+            m[i] ||
+            function () {
+              (m[i].a = m[i].a || []).push(arguments);
+            };
+          m[i].l = 1 * new Date();
+          (k = e.createElement(t)),
+            (a = e.getElementsByTagName(t)[0]),
+            (k.async = 1),
+            (k.src = r),
+            a.parentNode.insertBefore(k, a);
+        })(
+          window,
+          document,
+          "script",
+          "https://mc.yandex.ru/metrika/tag.js",
+          "ym"
+        );
+
+        ym(66417985, "init", {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+        });
+      </script>
+      <script>
+        // Enable Dark Theme
+        window.addEventListener("DOMContentLoaded", function () {
+          $("#cb1").click(function () {
+            if ($(this).prop("checked")) {
+              location.href = "?theme=dark";
+            } else {
+              location.href = "?theme=default";
+            }
+          });
+        });
+      </script>
+    </div>
+    <div id="Notice"></div>
+    <script>
+      var config = {
+          site: {
+              domain:   location.hostname,
+              protocol: location.protocol + '//',
+              hostname: location.hostname,
+              link: 'https://lk.forsage.io/',
+              course: {
+                  value: 'ETH_USD',
+                  symbol:'$',
+              },
+          },
+          user: {
+              refkey: 'vpat19',
+              address: '0x948e5f339942f9f6cf417c5fe6de73ef6059bd8b',
+              isAuthSecure: false,
+              sid: '2b2fd7148b32c82b6c700573550e5ffe',
+          },
+          lang: {
+              /* contract.js */
+              buyLevel                 : 'Confirm the purchase',
+              notDetectedWallet        : 'The Ethereum wallet is Not detected on your browser.',
+              unblockWallet            : 'Unlock the wallet for a transaction',
+              notActiveWallet          : 'Ethereum wallet is not active',
+              errorSendingTransaction  : 'Error sending transaction: ',
+              transactionSend          : 'The transaction has been sent! Please wait for confirmation of the network.',
+              confirmTransaction       : 'Confirm the transaction in your Ethereum wallet',
+              errorReadSmartContract   : 'Read error SmartContract',
+              uplineNotRegistered      : 'Your upline is not registered',
+              userNotExists            : 'The user is not registered',
+              authError                : 'Authorization error',
+
+              /* common.js */
+              copied                   : 'Copied',
+
+              // Сокеты события
+              'ws-regLevel_0'          : 'Joined ID:{user_id},
+              'ws-regLevel_1'          : 'Joined ID:{user_id}. You are on the right way!',
+              'ws-regLevel_2'          : 'Meet the new member ID:{user_id}.',
+              'ws-regLevel_3'          : 'New user ID:{user_id}. Welcome to Forsage!',
+              'ws-newUserPlace'        : 'ID:{user_id} earned {price_level} {crypto_name} (\${currency_usd}) in the {matrix}',
+              'ws-upgrade'             : 'ID:{user_id} buy {level} slot in {matrix} from ID:{ref_id}.',
+              'ws-reinvest'            : 'ID:{user_id} was auto-reinvested in slot {level} ({matrix})',
+              'ws-missedEthReceive'    : 'ID:{user_id} missed profit {price_level} {crypto_name} (\${currency_usd}). You must perform the upgrade in ({matrix})',
+              'ws-sentExtraEthDividends':'ID:{user_id} received a bonus {price_level} {crypto_name} (\${currency_usd})',
+              'ws-cannotSendMoneyEvent': 'ID:{user_id} error getting translation',
+              'ws-leadingPartner'      : 'ID:{user_id} missed profit {price_level} {crypto_name} (\${currency_usd}) from (ID:{u_id}) for area # {level} ({matrix})',
+              'ws-leadingPartnerToUpline':'ID:{u_id} overtook its parent ID is:{user_id} in the matrix {matrix} with area # {level}',
+              'ws-leadingPlacePurchase': 'ID:{user_id} ahead of your inviter (ID:{up_id}) for area # {level} ({matrix})',
+
+              // Скрипт с выводом даты отсчета времени
+              'elt-years_0'            : 'year',
+              'elt-years_1'            : 'year',
+              'elt-years_2'            : 'years',
+              'elt-months_0'           : 'a month',
+              'elt-months_1'           : 'months',
+              'elt-months_2'           : 'months',
+              'elt-days_0'             : 'day',
+              'elt-days_1'             : 'day',
+              'elt-days_2'             : 'days',
+              'elt-hours_0'            : 'hour',
+              'elt-hours_1'            : 'hours',
+              'elt-hours_2'            : 'hours',
+              'elt-minutes_0'          : 'min',
+              'elt-minutes_1'          : 'min',
+              'elt-minutes_2'          : 'min',
+              'elt-minutes_3'          : 'a minute',
+              'elt-seconds_0'          : 'second',
+              'elt-seconds_1'          : 'seconds',
+              'elt-seconds_2'          : 'seconds',
+              'elt-seconds_3'          : 'second',
+              'elt-end'                : ' ago',
+              'elt-freshly'            : 'just',
+              'elt-deadline'           : 'time left',
+              'elt-after'              : 'through ',
+          },
+          locked: {
+              buyLevel      : '',
+              authorization : '',
+              registration  : '',
+          },
+          permissions: {
+              buyLevel      : '0',
+          },
+          isFramed: null,
+          isMobile: false,
+          haveWallet: window.ethereum || window.web3,
+      };
+
+      // Получить основной домен
+      let arr = config.site.domain.split('.');
+      if(arr.length > 2) {
+          config.site.domain = arr.slice(arr.length - 2).join('.')
+      }
+
+      // Запущен ли сайт в теге iframe
+      try {
+        config.isFramed = window != window.top || document != top.document || self.location != top.location;
+      } catch (e) {
+        config.isFramed = true;
+      }
+    </script>
+    <script src="files/jquery.min.js(1).descarga"></script>
+
+    <script src="files/jquery.fancybox.min.js.descarga"></script>
+
+    <script src="files/cabinet.js.descarga"></script>
+    <script
+      src="files/alertify.min.js.descarga"
+      type="text/javascript"
+    ></script>
+    <script src="files/dashboard.js.descarga" type="text/javascript"></script>
+    <script src="files/jquery.dataTables.min.js.descarga"></script>
+    <script src="files/dataTables.bootstrap4.min.js.descarga"></script>
+    <script
+      src="files/popper.min.js.descarga"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="files/bootstrap.min.js.descarga"
+      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+      crossorigin="anonymous"
+    ></script>
+    <div class="require-auth">
+      Purchase in preview mode is not available! Please please login with your
+      Tron wallet.<br />
+      <br />
+      <div>
+        <button class="btn btn-success" id="reauth">Authorization</button>
+      </div>
+    </div>
+    <style>
+      .alertify.popup1 {
+        background: red !important;
+      }
+      .alertify.popup2 {
+        background: blue !important;
+      }
+      .alertify .ajs-dialog {
+        /*    background-image:*/
+        /*linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), */
+        /*url('https://forsagetron.io/ftronnew/promotion/assets/img/slider-1.jpg');*/
+        /* background:url(https://forsagetron.io/ftronnew/promotion/assets/img/slider-1.jpg) rgba(255, 0, 150, 0.3); */
+        /* background-image: url("https://forsagetron.io/ftronnew/promotion/assets/img/slider-1.jpg");
+            background-color: #cccccc;  */
+        /* height: 500px;  */
+        /*background: linear-gradient(135deg,#262856 2%,#274f8a 20%);*/
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        background-image: url(assets/images/body-bg.png);
+        background-color: #16181d;
+        color: #a1abbd;
+        font-family: "Ubuntu", Arial, "Helvetica Neue", Helvetica, serif,
+          sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .alertify .ajs-body {
+        min-height: 56px;
+        border: 1px solid #30a7e0;
+      }
+      .alertify .ajs-header {
+        color: #fff;
+        border-bottom: none;
+        border-radius: 6px 6px 0 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        background-color: transparent;
+      }
+      .alertify .ajs-footer {
+        background-color: transparent;
+        padding: 15px;
+        border-top: none;
+        border-radius: 0 0 6px 6px;
+      }
+      .alertify.ajs-closable .ajs-commands button.ajs-close {
+        float: right;
+      }
+      .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-ok {
+        color: #3593d2;
+        float: right;
+      }
+    </style>
+    <script>
+      var fsttousd;
+      var usdtotrx;
+      var fst1trx = 0;
+      var trx1fst = 0;
+      var fstphase = 1;
+      var fstpervar = 72000;
+      var mainfsttokenlimit = 10;
+      var fstpervar1 = 72000;
+      var tokensMintedByClaims2 = "";
+      window.addEventListener("load", async () => {
+        $(document).ready(function () {
+          //download earning banner  start -------------------------->
+          function downloadURI(uri, name) {
+            var link = document.createElement("a");
+            link.download = name;
+            link.href = uri;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            //after creating link you should delete dynamic link
+            //clearDynamicLink(link);
+          }
+
+          $("#printMe").click(function () {
+            $("#bannerVerifyText").css("display", "block");
+            html2canvas($("#userEarningBanner"), {
+              onrendered: function (canvas) {
+                // canvas is the final rendered <canvas> element
+
+                var myImage = canvas.toDataURL("image/png");
+                downloadURI(myImage, "userEarningBanner.png");
+                $("#bannerVerifyText").css("display", "none");
+              },
+            });
+          });
+          //download earning banner  end   -------------------------->
+
+          //dashboard welcome popup start ------------------------>
+          if (localStorage.getItem("dashboardPopup") == undefined) {
+            console.log("test2");
+            alertify.alert(
+              "Dear forsagetron community",
+              "The forsagetron core leaders team has seen and witnessed the relentless actions of all leaders. <br><br>We have planned something big for all leaders which will help them grow their team and strengthen the system.",
+              function () {}
+            );
+            $(".ajs-header").css("color", "white");
+            $(".ajs-content").css("color", "white");
+            localStorage.setItem("dashboardPopup", "displayed");
+          }
+          //dashboard welcome popup end ------------------------>
+
+          var metaMaskAddress = false;
+          var metaMaskAddressBase58 = false;
+
+          async function init() {
+            if (window.tronWeb != undefined) {
+              metaMaskAddress = await window.tronWeb.defaultAddress.hex;
+              metaMaskAddressBase58 = await window.tronWeb.defaultAddress
+                .base58;
+              if (metaMaskAddress != false) {
+                metaMaskAddress = metaMaskAddress.substring(2);
+                metaMaskAddress = "0x" + metaMaskAddress;
+                //console.log(metaMaskAddress);
+
+                var expires = "expires=Session";
+                var now = new Date();
+                now.setTime(now.getTime() + 168 * 3600 * 1000);
+                // document.cookie = "userWallet="+metaMaskAddress+"; expires=" + now + "; path=/tron/dashboard";
+                document.cookie =
+                  "userWallet=" +
+                  metaMaskAddress +
+                  "; expires=" +
+                  now +
+                  "; path=/";
+
+                //fst balance
+                var fst_contractadd = "TKzEMzoFWBuogADEfngQihri1VftwbkQcw";
+                var fst_contractInfo = await tronWeb.trx.getContract(
+                  fst_contractadd
+                );
+                var fstcontract = await tronWeb.contract(
+                  fst_contractInfo.abi.entrys,
+                  fst_contractadd
+                );
+                var fstbalance = await fstcontract
+                  .balanceOf(metaMaskAddressBase58)
+                  .call();
+                fstbalance = (
+                  Math.floor(window.tronWeb.toDecimal(fstbalance)) / 1000000
+                ).toFixed(4);
+                $("#fstbalance1").html(fstbalance);
+                $("#userfstbal").html(fstbalance + " <span>FST</span>");
+                var trxbalance = await window.tronWeb.trx.getBalance();
+                trxbalance = trxbalance / 1000000;
+                $("#trxbalance").html(trxbalance.toFixed(4));
+
+                //fst to usd
+                var fst_contract_minoradd =
+                  "TRfgMcT2698L4Ph1LEHzu7dsf25xHb1uaY";
+                var fst_contractminorInfo = await tronWeb.trx.getContract(
+                  fst_contract_minoradd
+                );
+                var fst_minorcontract = await tronWeb.contract(
+                  fst_contractminorInfo.abi.entrys,
+                  fst_contract_minoradd
+                );
+                fsttousdcall = await fst_minorcontract.FSTtoUSD().call();
+                //console.log("fsttousd :" + fsttousd);
+                fsttousd =
+                  window.tronWeb.toDecimal(fsttousdcall["tokenPrice"]) / 100;
+                fsttousd = fsttousd.toFixed(2);
+                var premphase = window.tronWeb.toDecimal(
+                  fsttousdcall["phaseNumber"]
+                );
+
+                //$("#fstpremrate").html(fsttousd.toFixed(2));
+                $("#fstpremrate1").html(fsttousd);
+                $("#fstpremrate2").html(fsttousd);
+
+                //totalSupply
+                var totalcurrSupply = await fstcontract.totalSupply().call();
+                totalcurrSupply =
+                  window.tronWeb.toDecimal(totalcurrSupply) / 1000000;
+                totalcurrSupply = totalcurrSupply.toFixed(4);
+                $("#totalcurrSupply").html(totalcurrSupply + " FST");
+
+                /*var perc=Math.round((totalSupply /720000)*100);
+                    
+                    $(".progress-percent").attr('data-percent',perc);
+                    $(".progress-percent").css('width',perc+'%');*/
+                //$("#hcapvalue").html(totalSupply);
+
+                var tokenPriceForClaim = await fst_minorcontract
+                  .tokenPriceForClaim()
+                  .call();
+                fstphase = window.tronWeb.toDecimal(
+                  tokenPriceForClaim["phaseNumber"]
+                );
+
+                var fstcurrentrate =
+                  window.tronWeb.toDecimal(tokenPriceForClaim["tokenPrice"]) /
+                  100;
+                // $("#fstcurrentrate").html(fstcurrentrate.toFixed(2));
+                fstcurrentrate = fstcurrentrate.toFixed(2);
+                $("#fstcurrentrate1").html(fstcurrentrate);
+                $("#fstcurrentrate2").html(fstcurrentrate);
+
+                var fsttokenlimit = window.tronWeb.toDecimal(
+                  tokenPriceForClaim["tokenAmount"]
+                );
+                mainfsttokenlimit = fsttokenlimit;
+                // console.log("fsttokenlimit : " + fsttokenlimit);
+                //tokensMintedByPurchase
+                var tokensMintedByPurchase = await fst_minorcontract
+                  .tokensMintedByPurchase()
+                  .call();
+                tokensMintedByPurchase =
+                  window.tronWeb.toDecimal(tokensMintedByPurchase) / 1000000;
+                tokensMintedByPurchase = tokensMintedByPurchase.toFixed(4);
+                $("#premSupply").html(tokensMintedByPurchase + " FST");
+                //tokensMintedByPurchase= tokensMintedByPurchase.toFixed(0);
+                // console.log("tokensMintedByPurchase  : "+tokensMintedByPurchase );
+
+                //claimStatus
+                var claimStatus = await fst_minorcontract
+                  .claimStatus(metaMaskAddressBase58, fstphase)
+                  .call();
+                console.log("claimStatus : " + claimStatus);
+                claimStatus = window.tronWeb.toDecimal(claimStatus) / 1000000;
+                fsttokenlimit = fsttokenlimit - claimStatus;
+                //if(claimStatus==true)
+                if (parseInt(fsttokenlimit) == 0) {
+                  $("#get10fst").unbind("click");
+                  $("#get10fst").attr("disabled", true);
+
+                  $("#get10fst").html(
+                    "You have already purchased community phase FST Token"
+                  );
+                }
+                $("#tokenlimit").html(fsttokenlimit);
+                $("#claimtoken").attr("max", fsttokenlimit);
+                //tokensMintedByClaims
+                var tokensMintedByClaims = await fst_minorcontract
+                  .tokensMintedByClaims()
+                  .call();
+                tokensMintedByClaims =
+                  window.tronWeb.toDecimal(tokensMintedByClaims) / 1000000;
+                tokensMintedByClaims = tokensMintedByClaims.toFixed(4);
+                //  console.log("tokensMintedByClaims : "+tokensMintedByClaims);
+                // $("#totalSupply").html( tokensMintedByClaims + " FST");
+
+                var tokensMintedByClaims1 = tokensMintedByClaims;
+                if (fstphase == 2) {
+                  fstpervar = 144000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 72000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 72000;
+                  fstpervar1 = 72000;
+                } else if (fstphase == 3) {
+                  fstpervar = 206000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 144000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 62000;
+                  fstpervar1 = 62000;
+                } else if (fstphase == 4) {
+                  fstpervar = 258000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 206000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 52000;
+                  fstpervar1 = 52000;
+                } else if (fstphase == 5) {
+                  fstpervar = 310000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 258000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 52000;
+                  fstpervar1 = 52000;
+                }
+
+                //if(tokensMintedByClaims>310000){
+                tokensMintedByClaims1 = parseFloat(
+                  tokensMintedByPurchase
+                ).toFixed(0);
+                fstphase = premphase;
+                if (fstphase == 6) {
+                  fstpervar = 352000;
+                  //  tokensMintedByClaims1 = parseFloat(tokensMintedByClaims1) - 310000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 42000;
+                  fstpervar1 = 42000;
+                } else if (fstphase == 7) {
+                  fstpervar = 394000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 42000; //352000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 42000;
+                  fstpervar1 = 42000;
+                } else if (fstphase == 8) {
+                  fstpervar = 426000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 84000; //394000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 32000;
+                  fstpervar1 = 32000;
+                } else if (fstphase == 9) {
+                  fstpervar = 458000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 116000; //426000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 32000;
+                  fstpervar1 = 32000;
+                } else if (fstphase == 10) {
+                  fstpervar = 484000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 148000; //458000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 26000;
+                  fstpervar1 = 26000;
+                } else if (fstphase == 11) {
+                  fstpervar = 510000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 174000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 26000;
+                  fstpervar1 = 26000;
+                } else if (fstphase == 12) {
+                  fstpervar = 536000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 200000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 26000;
+                  fstpervar1 = 26000;
+                } else if (fstphase == 13) {
+                  fstpervar = 562000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 226000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 26000;
+                  fstpervar1 = 26000;
+                } else if (fstphase == 14) {
+                  fstpervar = 586000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 252000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 24000;
+                  fstpervar1 = 24000;
+                } else if (fstphase == 15) {
+                  fstpervar = 610000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 276000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 24000;
+                  fstpervar1 = 24000;
+                } else if (fstphase == 16) {
+                  fstpervar = 634000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 300000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 24000;
+                  fstpervar1 = 24000;
+                } else if (fstphase == 17) {
+                  fstpervar = 656000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 324000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 22000;
+                  fstpervar1 = 22000;
+                } else if (fstphase == 18) {
+                  fstpervar = 678000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 346000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 22000;
+                  fstpervar1 = 22000;
+                } else if (fstphase == 19) {
+                  fstpervar = 700000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 368000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 22000;
+                  fstpervar1 = 22000;
+                } else if (fstphase == 20) {
+                  fstpervar = 720000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 390000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 20000;
+                  fstpervar1 = 20000;
+                }
+                // }
+                $("#totalSupply").html(tokensMintedByClaims2 + " FST");
+                var userfstusdbal = fstbalance * fsttousd;
+                usdtotrx = await fst_minorcontract.USDtoTRX().call();
+                usdtotrx = usdtotrx / 1000000;
+                usdtotrx = usdtotrx.toFixed(2);
+                fst1trx = fsttousd * usdtotrx;
+                trx1fst = 1 / fst1trx;
+                $("#buytokentrx").html(trx1fst.toFixed(4));
+                if (fstphase < 6) {
+                  fst1trx = fstcurrentrate * usdtotrx;
+                  userfstusdbal = fstbalance * fstcurrentrate;
+                }
+
+                $("#userfstusdbal").html(
+                  userfstusdbal.toFixed(4) + " <span>USD</span>"
+                );
+                //trx1fst =await fst_minorcontract.TRXtoFST().call();
+                //trx1fst= window.tronWeb.toDecimal(trx1fst)/100000;
+
+                var leaderPoolFee = (fst1trx * 3) / 100;
+                leaderPoolFee = fst1trx - leaderPoolFee;
+                $("#selltokentrx").html(leaderPoolFee.toFixed(4));
+
+                $("#selltokentrx1").html(fst1trx.toFixed(4));
+                $("#fsttotrx").html(fst1trx.toFixed(4));
+
+                /*if(parseInt(tokensMintedByClaims)>72000 && parseInt(tokensMintedByClaims)<= 144000)
+                    {
+                        fstphase=2;
+                        fstpervar=144000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >144000 && parseInt(tokensMintedByClaims)<= 206000)
+                    {
+                        fstphase=3;
+                        fstpervar=206000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >206000 && parseInt(tokensMintedByClaims)<= 258000)
+                    {
+                        fstphase=4;
+                        fstpervar= 258000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >258000 && parseInt(tokensMintedByClaims)<= 310000)
+                    {
+                        fstphase=5;
+                        fstpervar=310000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >310000 && parseInt(tokensMintedByClaims)<= 352000)
+                    {
+                        fstphase=6;
+                        fstpervar=352000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >352000 && parseInt(tokensMintedByClaims)<= 394000)
+                    {
+                        fstphase=7;
+                        fstpervar=394000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >394000 && parseInt(tokensMintedByClaims)<= 426000)
+                    {
+                        fstphase=8;
+                        fstpervar=426000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >426000 && parseInt(tokensMintedByClaims)<= 458000)
+                    {
+                        fstphase=9;
+                        fstpervar=458000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >458000 && parseInt(tokensMintedByClaims)<= 484000)
+                    {
+                        fstphase=10;
+                        fstpervar=484000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >484000 && parseInt(tokensMintedByClaims)<= 510000)
+                    {
+                        fstphase=11;
+                        fstpervar=510000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >510000 && parseInt(tokensMintedByClaims)<= 536000)
+                    {
+                        fstphase=12;
+                        fstpervar=536000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >536000 && parseInt(tokensMintedByClaims)<= 562000)
+                    {
+                        fstphase=13;
+                        fstpervar=562000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >562000 && parseInt(tokensMintedByClaims)<= 586000)
+                    {
+                        fstphase=14;
+                        fstpervar=586000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >586000 && parseInt(tokensMintedByClaims)<= 610000)
+                    {
+                        fstphase=15;
+                        fstpervar=610000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >610000 && parseInt(tokensMintedByClaims)<= 634000)
+                    {
+                        fstphase=16;
+                        fstpervar=634000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >634000 && parseInt(tokensMintedByClaims)<= 656000)
+                    {
+                        fstphase=17;
+                        fstpervar=656000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >656000 && parseInt(tokensMintedByClaims)<= 678000)
+                    {
+                        fstphase=18;
+                        fstpervar=678000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >678000 && parseInt(tokensMintedByClaims)<= 700000)
+                    {
+                        fstphase=19;
+                        fstpervar=700000;
+                    }
+                    else if(parseInt(tokensMintedByClaims) >700000 && parseInt(tokensMintedByClaims)<= 720000)
+                    {
+                        fstphase=20;
+                        fstpervar=720000;
+                    }*/
+                var row = parseInt(fstphase) - 1;
+                var row1 = parseInt(premphase) - 1;
+                $("#team_activation_tbody tr").each(function (i) {
+                  if (i == row || i == row1) {
+                    //$('#team_activation_tbody tr:eq('+i+') > td:eq(6)').html('<span class="text-danger">Active</span>');
+                    $(this)
+                      .find("td:eq(6)")
+                      .html('<span class="text-success">Active</span>');
+                  } else if (i < row) {
+                    //$('#team_activation_tbody tr:eq('+i+') > td:eq(6)').html('<span class="text-warning">Completed</span>');
+                    $(this)
+                      .find("td:eq(6)")
+                      .html('<span class="text-danger">Completed</span>');
+                  }
+                });
+
+                $("#dvfstphase").html(" Forsagetron Exchange - " + fstphase);
+                $("#raisedfst").html(tokensMintedByClaims2);
+                $("#softcap").html(
+                  fstpervar.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+                var percsoft = ((fstpervar / 720000) * 100).toFixed(2);
+                //console.log("percsoft :"+ percsoft);
+                $(".progress-scap").attr("data-percent", percsoft);
+                $(".progress-scap").css("width", percsoft + "%");
+                /* var perc=((tokensMintedByPurchase /fstpervar)*100).toFixed(2);
+                    var percw=$(".progress-scap").attr('data-percent');
+                    percw =(percw * perc /100).toFixed(2);
+                    $(".progress-percent").attr('data-percent',perc);
+                    $(".progress-percent").css('width',percw+'%');
+                    $("#raisedper").html(perc+'%');*/
+                //var perc=((tokensMintedByPurchase /fstpervar)*100).toFixed(2);
+                var perc = ((tokensMintedByClaims1 / fstpervar1) * 100).toFixed(
+                  2
+                );
+                var percw = $(".progress-scap").attr("data-percent");
+                percw = ((percw * perc) / 100).toFixed(2);
+                //var percw =perc;
+                percw = perc;
+                $(".progress-percent").attr("data-percent", perc);
+                $(".progress-percent").css("width", perc + "%");
+
+                $("#raisedper").html(perc + "%");
+
+                var fst_cur_rate = 0.0;
+                var fst_prem_rate = 47.73;
+                var cur_supply = 310070.81;
+                var exchange_supply = 211985.5311;
+                var total_supply = 586856.1908;
+                var cur_phase = 12;
+                var raised_fst = 536000;
+                var fst_perc = 46.1;
+                var fsttotrx = 1687.7328;
+                var trxtofst = 0.0006;
+                var fst_percw = 46.1;
+                var cur_supply_raised = "11986 / 26000";
+                var fst_token_limit = "0";
+                var fst1trx1 = fst1trx.toFixed(4);
+                var trx1fst1 = trx1fst.toFixed(4);
+                //console.log(fstcurrentrate + " : "+ fsttousd + " : " + parseFloat(totalcurrSupply) + " : " + parseFloat(tokensMintedByPurchase) + " : "+ tokensMintedByClaims + " : " + fstphase  + " : " + fstpervar  + " : " + perc + " : "+ percw + " : " + parseFloat(fst1trx1) + " : " + parseFloat(trx1fst1)  );
+
+                // console.log("ttttttttttttttttttt");
+                if (
+                  parseFloat(fst_cur_rate) != parseFloat(fstcurrentrate) ||
+                  parseFloat(fst_prem_rate) != parseFloat(fsttousd) ||
+                  parseFloat(cur_supply) != parseFloat(tokensMintedByClaims) ||
+                  parseFloat(exchange_supply) !=
+                    parseFloat(tokensMintedByPurchase) ||
+                  parseFloat(total_supply) != parseFloat(totalcurrSupply) ||
+                  cur_phase != fstphase ||
+                  raised_fst != fstpervar ||
+                  parseFloat(fst_perc) != parseFloat(perc) ||
+                  parseFloat(fst_percw) != parseFloat(percw) ||
+                  parseFloat(fsttotrx) != parseFloat(fst1trx1) ||
+                  parseFloat(trxtofst) != parseFloat(trx1fst1) ||
+                  cur_supply_raised != tokensMintedByClaims2 ||
+                  fst_token_limit != mainfsttokenlimit
+                ) {
+                  //console.log("SSSSSSSSSSSSSSSSSSSSSSSS");
+                  $.ajax({
+                    url: "includes/setfstcontractdet.php",
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                      fst_cur_rate: fstcurrentrate,
+                      fst_prem_rate: fsttousd,
+                      cur_supply: tokensMintedByClaims,
+                      exchange_supply: tokensMintedByPurchase,
+                      total_supply: totalcurrSupply,
+                      cur_phase: fstphase,
+                      raised_fst: fstpervar,
+                      fst_perc: perc,
+                      fst_percw: percw,
+                      fsttotrx: fst1trx1,
+                      trxtofst: trx1fst1,
+                      cur_supply_raised: tokensMintedByClaims2,
+                      fsttokenlimit: mainfsttokenlimit,
+                    },
+                    success: function (val) {
+                      //  console.log("AAA: " + val);
+                    },
+                  });
+                }
+              }
+            }
+          }
+          setTimeout(init, 1000);
+
+          async function setinit() {
+            if (window.tronWeb != undefined) {
+              metaMaskAddress = await window.tronWeb.defaultAddress.hex;
+              metaMaskAddressBase58 = await window.tronWeb.defaultAddress
+                .base58;
+              if (metaMaskAddress != false) {
+                metaMaskAddress = metaMaskAddress.substring(2);
+                metaMaskAddress = "0x" + metaMaskAddress;
+
+                var expires = "expires=Session";
+                var now = new Date();
+                now.setTime(now.getTime() + 168 * 3600 * 1000);
+                // document.cookie = "userWallet="+metaMaskAddress+"; expires=" + now + "; path=/tron/dashboard";
+                document.cookie =
+                  "userWallet=" +
+                  metaMaskAddress +
+                  "; expires=" +
+                  now +
+                  "; path=/";
+
+                //fst balance
+                var fst_contractadd = "TKzEMzoFWBuogADEfngQihri1VftwbkQcw";
+                var fst_contractInfo = await tronWeb.trx.getContract(
+                  fst_contractadd
+                );
+                var fstcontract = await tronWeb.contract(
+                  fst_contractInfo.abi.entrys,
+                  fst_contractadd
+                );
+                var fstbalance = await fstcontract
+                  .balanceOf(metaMaskAddressBase58)
+                  .call();
+                fstbalance = (
+                  Math.floor(window.tronWeb.toDecimal(fstbalance)) / 1000000
+                ).toFixed(4);
+                $("#fstbalance1").html(fstbalance);
+                $("#userfstbal").html(fstbalance + " <span>FST</span>");
+                var trxbalance = await window.tronWeb.trx.getBalance();
+                trxbalance = trxbalance / 1000000;
+                $("#trxbalance").html(trxbalance.toFixed(4));
+
+                //fst to usd
+                var fst_contract_minoradd =
+                  "TRfgMcT2698L4Ph1LEHzu7dsf25xHb1uaY";
+                var fst_contractminorInfo = await tronWeb.trx.getContract(
+                  fst_contract_minoradd
+                );
+                var fst_minorcontract = await tronWeb.contract(
+                  fst_contractminorInfo.abi.entrys,
+                  fst_contract_minoradd
+                );
+                fsttousdcall = await fst_minorcontract.FSTtoUSD().call();
+                //console.log("fsttousd :" + fsttousd);
+                fsttousd =
+                  window.tronWeb.toDecimal(fsttousdcall["tokenPrice"]) / 100;
+                fsttousd = fsttousd.toFixed(2);
+                var premphase = window.tronWeb.toDecimal(
+                  fsttousdcall["phaseNumber"]
+                );
+                //$("#fstpremrate").html(fsttousd.toFixed(2));
+                //var userfstusdbal = fstbalance* fsttousd;
+                // $("#userfstusdbal").html(userfstusdbal.toFixed(4) + ' <span>USD</span>');
+
+                //totalSupply
+                var totalcurrSupply = await fstcontract.totalSupply().call();
+                totalcurrSupply =
+                  window.tronWeb.toDecimal(totalcurrSupply) / 1000000;
+                $("#totalcurrSupply").html(totalcurrSupply.toFixed(4) + " FST");
+
+                var tokenPriceForClaim = await fst_minorcontract
+                  .tokenPriceForClaim()
+                  .call();
+                fstphase = window.tronWeb.toDecimal(
+                  tokenPriceForClaim["phaseNumber"]
+                );
+                var fstcurrentrate =
+                  window.tronWeb.toDecimal(tokenPriceForClaim["tokenPrice"]) /
+                  100;
+                // $("#fstcurrentrate").html(fstcurrentrate.toFixed(2));
+                var fsttokenlimit = window.tronWeb.toDecimal(
+                  tokenPriceForClaim["tokenAmount"]
+                );
+                console.log("fsttokenlimit : " + fsttokenlimit);
+
+                //claimStatus
+                var claimStatus = await fst_minorcontract
+                  .claimStatus(metaMaskAddressBase58, fstphase)
+                  .call();
+                console.log("claimStatus : " + claimStatus);
+                claimStatus = window.tronWeb.toDecimal(claimStatus) / 1000000;
+                fsttokenlimit = fsttokenlimit - claimStatus;
+                //if(claimStatus==true)
+                if (parseInt(fsttokenlimit) == 0) {
+                  $("#get10fst").unbind("click");
+                  $("#get10fst").attr("disabled", true);
+
+                  $("#get10fst").html(
+                    "You have already purchased community phase FST Token"
+                  );
+                }
+                $("#tokenlimit").html(fsttokenlimit);
+                $("#claimtoken").attr("max", fsttokenlimit);
+                //tokensMintedByPurchase
+                var tokensMintedByPurchase = await fst_minorcontract
+                  .tokensMintedByPurchase()
+                  .call();
+                tokensMintedByPurchase =
+                  window.tronWeb.toDecimal(tokensMintedByPurchase) / 1000000;
+                $("#premSupply").html(
+                  tokensMintedByPurchase.toFixed(4) + " FST"
+                );
+                // console.log("tokensMintedByPurchase  : "+tokensMintedByPurchase );
+                // tokensMintedByPurchase =  tokensMintedByPurchase.toFixed(0);
+
+                //tokensMintedByClaims
+                var tokensMintedByClaims = await fst_minorcontract
+                  .tokensMintedByClaims()
+                  .call();
+                tokensMintedByClaims =
+                  window.tronWeb.toDecimal(tokensMintedByClaims) / 1000000;
+                //console.log("tokensMintedByClaims : "+tokensMintedByClaims);
+                //$("#totalSupply").html(tokensMintedByClaims.toFixed(4) + " FST");
+                tokensMintedByClaims1 = tokensMintedByClaims;
+                if (fstphase == 2) {
+                  fstpervar = 144000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 72000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 72000;
+                  fstpervar1 = 72000;
+                } else if (fstphase == 3) {
+                  fstpervar = 206000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 144000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 62000;
+                  fstpervar1 = 62000;
+                } else if (fstphase == 4) {
+                  fstpervar = 258000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 206000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 52000;
+                  fstpervar1 = 52000;
+                } else if (fstphase == 5) {
+                  fstpervar = 310000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 258000;
+                  tokensMintedByClaims2 =
+                    tokensMintedByClaims1.toFixed(0) + " / " + 52000;
+                  fstpervar1 = 52000;
+                }
+                //if(tokensMintedByClaims>310000){
+                tokensMintedByClaims1 = parseFloat(
+                  tokensMintedByPurchase
+                ).toFixed(0);
+                //console.log("  tokensMintedByPurchase  : "+tokensMintedByPurchase);
+                fstphase = premphase;
+                if (fstphase == 6) {
+                  fstpervar = 352000;
+                  // tokensMintedByClaims1 = parseFloat(tokensMintedByClaims1) - 310000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 42000;
+                  fstpervar1 = 42000;
+                } else if (fstphase == 7) {
+                  fstpervar = 394000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 42000; //352000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 42000;
+                  fstpervar1 = 42000;
+                } else if (fstphase == 8) {
+                  fstpervar = 426000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 84000; //394000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 32000;
+                  fstpervar1 = 32000;
+                } else if (fstphase == 9) {
+                  fstpervar = 458000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 116000; //426000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 32000;
+                  fstpervar1 = 32000;
+                } else if (fstphase == 10) {
+                  fstpervar = 484000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 148000; //458000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 26000;
+                  fstpervar1 = 26000;
+                } else if (fstphase == 11) {
+                  fstpervar = 510000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 174000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 26000;
+                  fstpervar1 = 26000;
+                } else if (fstphase == 12) {
+                  fstpervar = 536000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 200000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 26000;
+                  fstpervar1 = 26000;
+                } else if (fstphase == 13) {
+                  fstpervar = 562000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 226000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 26000;
+                  fstpervar1 = 26000;
+                } else if (fstphase == 14) {
+                  fstpervar = 586000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 252000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 24000;
+                  fstpervar1 = 24000;
+                } else if (fstphase == 15) {
+                  fstpervar = 610000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 276000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 24000;
+                  fstpervar1 = 24000;
+                } else if (fstphase == 16) {
+                  fstpervar = 634000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 300000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 24000;
+                  fstpervar1 = 24000;
+                } else if (fstphase == 17) {
+                  fstpervar = 656000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 324000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 22000;
+                  fstpervar1 = 22000;
+                } else if (fstphase == 18) {
+                  fstpervar = 678000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 346000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 22000;
+                  fstpervar1 = 22000;
+                } else if (fstphase == 19) {
+                  fstpervar = 700000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 368000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 22000;
+                  fstpervar1 = 22000;
+                } else if (fstphase == 20) {
+                  fstpervar = 720000;
+                  tokensMintedByClaims1 =
+                    parseFloat(tokensMintedByClaims1) - 390000;
+                  tokensMintedByClaims2 = tokensMintedByClaims1 + " / " + 20000;
+                  fstpervar1 = 20000;
+                }
+                //}
+                $("#totalSupply").html(tokensMintedByClaims2 + " FST");
+                var userfstusdbal = fstbalance * fsttousd;
+
+                /* if(fstphase<6)
+                    {
+                        userfstusdbal = fstbalance* fstcurrentrate;
+                    }
+                     */
+                $("#userfstusdbal").html(
+                  userfstusdbal.toFixed(4) + " <span>USD</span>"
+                );
+                //trx1fst =await fst_minorcontract.TRXtoFST().call();
+                //trx1fst= window.tronWeb.toDecimal(trx1fst)/100000;
+
+                var row = parseInt(fstphase) - 1;
+                $("#team_activation_tbody tr").each(function (i) {
+                  if (i == row) {
+                    //$('#team_activation_tbody tr:eq('+i+') > td:eq(6)').html('<span class="text-danger">Active</span>');
+                    $(this)
+                      .find("td:eq(6)")
+                      .html('<span class="text-success">Active</span>');
+                  } else if (i < row) {
+                    //$('#team_activation_tbody tr:eq('+i+') > td:eq(6)').html('<span class="text-warning">Completed</span>');
+                    $(this)
+                      .find("td:eq(6)")
+                      .html('<span class="text-danger">Completed</span>');
+                  }
+                });
+                console.log("fstphase : " + fstphase);
+                $("#dvfstphase").html(" Forsagetron Exchange - " + fstphase);
+                $("#raisedfst").html(tokensMintedByClaims2);
+                var percsoft = ((fstpervar / 720000) * 100).toFixed(2);
+                //console.log("percsoft :"+ percsoft);
+                $(".progress-scap").attr("data-percent", percsoft);
+                $(".progress-scap").css("width", percsoft + "%");
+                //var perc=((tokensMintedByPurchase / fstpervar)*100).toFixed(2);
+                var perc = ((tokensMintedByClaims1 / fstpervar1) * 100).toFixed(
+                  2
+                );
+                var percw = $(".progress-scap").attr("data-percent");
+                percw = (percw * perc) / 100;
+                percw = perc;
+                $(".progress-percent").attr("data-percent", perc);
+                $(".progress-percent").css("width", percw + "%");
+                // $("#raisedper").html(perc+'%');*/
+                var perc1 = (
+                  (parseFloat(tokensMintedByClaims1) / fstpervar1) *
+                  100
+                ).toFixed(2);
+                // var percw=$(".progress-scap").attr('data-percent');
+                //percw =(percw * perc /100).toFixed(2);
+                // $(".progress-percent").attr('data-percent',perc);
+                // $(".progress-percent").css('width',perc+'%');
+                $("#raisedper").html(perc + "%");
+              }
+            }
+          }
+          setInterval(setinit, 5000);
+
+          setTimeout(function () {
+            fetchCurrentIncome();
+          }, 1500);
+
+          async function fetchCurrentIncome() {
+            var _userId = "15";
+
+            //var helperContract = "TEupQFTT6wYRr5p57XpfLFqxVZu3Q9oxko";
+
+            if (window.tronWeb != undefined) {
+              //alert("wallet connected");
+              var mainContractAddress = "TJRv6qukWEz4DKY6gkd3fhX4uahREpTQu6";
+              var hookContractAddress = "TV3ZtpJHt6sKsWAy7UgxCNZJ6psqBjJagP";
+              var myContractInfo = await tronWeb.trx.getContract(
+                hookContractAddress
+              );
+              var myContract = await tronWeb.contract(
+                myContractInfo.abi.entrys,
+                hookContractAddress
+              );
+
+              var userWallet = "0x305abd3892c028aab90f7ec4453c58f7023f68b8";
+              var userID = "1";
+              var level = 1;
+              var incomeData = await myContract
+                .viewUsersX3Matrix(mainContractAddress, userWallet)
+                .call();
+
+              if (typeof incomeData !== "undefined") {
+                if (incomeData[1].length > 0) {
+                  $("#x3_1_1").html(
+                    "<a href='https://forsagetron.io/ftronnew/dashboard/?page/x3/1/" +
+                      userID +
+                      "/txn=0x3b9a5e9c95ceabf29d029f723cb0ca917dfbf203' title='" +
+                      incomeData[1] +
+                      "'></a>"
+                  );
+                  $("#x3_1_1")
+                    .removeClass("matrix-children__nonactive")
+                    .addClass("matrix-children__active");
+                }
+              }
+
+              console.log("yog");
+              console.log(incomeData[1]);
+              var totalIncome = 0;
+            }
+          }
+
+          $(".matrix-icon_cart2").click(async function () {
+            var matrix = $(this).data("matrix");
+            var level = $(this).attr("data-level");
+
+            // Modern dapp browsers...
+            if (window.tronWeb != undefined) {
+              try {
+                // Acccounts now exposed
+                var metaMaskAddress = await window.tronWeb.defaultAddress
+                  .base58;
+
+                if (metaMaskAddress == false) {
+                  alertify.alert("Login", "Please Login to Tronlink Wallet.");
+                  return false;
+                }
+
+                if (metaMaskAddress != false) {
+                  var myAccountAddress = metaMaskAddress;
+
+                  var mainContractAddress =
+                    "TJRv6qukWEz4DKY6gkd3fhX4uahREpTQu6";
+
+                  var myContractInfo = await tronWeb.trx.getContract(
+                    mainContractAddress
+                  );
+                  var myContract = await tronWeb.contract(
+                    myContractInfo.abi.entrys,
+                    mainContractAddress
+                  );
+                  var valuePass = await myContract.levelPrice(level).call();
+                  valuePass = window.tronWeb.toDecimal(valuePass);
+                  console.log(valuePass);
+                  console.log(level);
+
+                  console.log("result2");
+                  var result = await myContract
+                    .buyNewLevel(matrix, level)
+                    .send({
+                      shouldPollResponse: false,
+                      feeLimit: 150000000,
+                      callValue: valuePass,
+                      from: myAccountAddress,
+                    });
+                  console.log("result");
+                  console.log(result);
+                  console.log("result");
+                  if (result) {
+                    alertify.alert(
+                      "Transacton Recorded",
+                      "Thanks for Upgrading. You can check the status at <a href='https://tronscan.org/#/transaction/" +
+                        result +
+                        "' target='_blank'>Tronscan</a><br><br> Please wait while transaction is being confirmed in the Blockchain.",
+                      function () {}
+                    );
+                  }
+                }
+              } catch (e) {}
+            }
+          });
+          $("#get10fst").click(async function () {
+            if (window.tronWeb != undefined) {
+              try {
+                // Acccounts now exposed
+                var metaMaskAddress = await window.tronWeb.defaultAddress
+                  .base58;
+
+                if (metaMaskAddress == false) {
+                  alertify.alert("Login", "Please Login to Tronlink Wallet.");
+                  return false;
+                }
+
+                if (metaMaskAddress != false) {
+                  var myAccountAddress = metaMaskAddress;
+                  var tokenclaim = $("#claimtoken").val();
+                  tokenclaim = tokenclaim * 1000000; // await window.tronWeb.trx.toSUN(tokenclaim);
+                  console.log("tokenclaim : " + tokenclaim);
+                  var mainContractAddress =
+                    "TRfgMcT2698L4Ph1LEHzu7dsf25xHb1uaY";
+                  var myContractInfo = await tronWeb.trx.getContract(
+                    mainContractAddress
+                  );
+
+                  var myContract = await tronWeb.contract(
+                    myContractInfo.abi.entrys,
+                    mainContractAddress
+                  );
+                  var valuePass = await myContract
+                    .trxCostToClaim(tokenclaim)
+                    .call();
+                  valuePass = window.tronWeb.toDecimal(valuePass);
+                  console.log(valuePass);
+                  console.log("result2");
+                  var result = await myContract.claimTokens(tokenclaim).send({
+                    shouldPollResponse: false,
+                    feeLimit: 15000000,
+                    callValue: valuePass,
+                    from: myAccountAddress,
+                  });
+                  console.log(result);
+                  if (result) {
+                    alertify.alert(
+                      "Transacton Recorded",
+                      "Thanks for Buying FST Token. You can check the status at <a href='https://tronscan.org/#/transaction/" +
+                        result +
+                        "' target='_blank'>Tronscan</a><br><br> Please wait while transaction is being confirmed in the Blockchain.",
+                      function () {}
+                    );
+                  }
+                }
+              } catch (e) {}
+            }
+          });
+        });
+      });
+      function isNumberKey(evt) {
+        var charCode = evt.which ? evt.which : event.keyCode;
+        return !(charCode > 31 && (charCode < 48 || charCode > 57));
+      }
+      $(document).ready(function () {
+        $("#trxbalance").on("click", async function () {
+          $("#buytokenamount").val($(this).html());
+        });
+        $("#fstbalance1").on("click", async function () {
+          $("#selltokenamount").val($(this).html());
+        });
+        $("#buytokenamount").on("input keyup change click", function (e) {
+          var vToken = $(this).val();
+          var vfsttotrx = (vToken * trx1fst).toFixed(4);
+          $("#buytokentrx").html(vfsttotrx);
+        });
+        $("#selltokenamount").on("input keyup change click", function () {
+          var vToken = $(this).val();
+          var vfsttotrx = vToken * fst1trx;
+          var leaderPoolFee = (vfsttotrx * 3) / 100;
+          vfsttotrx = vfsttotrx - leaderPoolFee;
+          $("#selltokentrx").html(vfsttotrx.toFixed(4));
+        });
+        $("#claimtoken").on("input keyup change click", function () {
+          var maxQuantity = $(this).attr("max");
+          if (parseFloat($(this).val()) > parseFloat(maxQuantity)) {
+            $(this).val(maxQuantity);
+            //this.value = maxQuantity;
+          }
+          var vToken = $(this).val();
+          var vfsttotrx = vToken * fst1trx;
+          $("#selltokentrx1").html(vfsttotrx.toFixed(4));
+        });
+        $("#btnbuytoken").on("click", async function () {
+          if (window.tronWeb != undefined) {
+            try {
+              // Acccounts now exposed
+              var metaMaskAddress = await window.tronWeb.defaultAddress.base58;
+
+              if (metaMaskAddress == false) {
+                alertify.alert("Login", "Please Login to Tronlink Wallet.");
+                return false;
+              }
+
+              if (metaMaskAddress != false) {
+                var myAccountAddress = metaMaskAddress;
+
+                var mainContractAddress = "TRfgMcT2698L4Ph1LEHzu7dsf25xHb1uaY";
+                var myContractInfo = await tronWeb.trx.getContract(
+                  mainContractAddress
+                );
+                var myContract = await tronWeb.contract(
+                  myContractInfo.abi.entrys,
+                  mainContractAddress
+                );
+                valuePass = $("#buytokenamount").val();
+                valuePass = valuePass * 1000000;
+                console.log(valuePass);
+
+                var result = await myContract.buyTokens().send({
+                  shouldPollResponse: false,
+                  feeLimit: 15000000,
+                  callValue: valuePass,
+                  from: myAccountAddress,
+                });
+                console.log(result);
+                if (result) {
+                  alertify.alert(
+                    "Transacton Recorded",
+                    "Thanks for Buying Token. You can check the status at <a href='https://tronscan.org/#/transaction/" +
+                      result +
+                      "' target='_blank'>Tronscan</a><br><br> Please wait while transaction is being confirmed in the Blockchain.",
+                    function () {}
+                  );
+                }
+              }
+            } catch (e) {}
+          }
+        });
+
+        $("#btnselltoken").on("click", async function () {
+          if (window.tronWeb != undefined) {
+            try {
+              // Acccounts now exposed
+              var metaMaskAddress = await window.tronWeb.defaultAddress.base58;
+
+              if (metaMaskAddress == false) {
+                alertify.alert("Login", "Please Login to Tronlink Wallet.");
+                return false;
+              }
+
+              if (metaMaskAddress != false) {
+                var myAccountAddress = metaMaskAddress;
+
+                var mainSellContractAddress =
+                  "TQ4YxDnHBa5pxvhp642m28cvEdZmWkSMvF";
+                var mySellContractInfo = await tronWeb.trx.getContract(
+                  mainSellContractAddress
+                );
+                var mySellContract = await tronWeb.contract(
+                  mySellContractInfo.abi.entrys,
+                  mainSellContractAddress
+                );
+
+                var canSellTokens = await mySellContract
+                  .canSellTokens(myAccountAddress)
+                  .call();
+                if (canSellTokens == false) {
+                  alertify.alert(
+                    "",
+                    "You cannot sell token. Please try after 24 hours."
+                  );
+                  return false;
+                } else {
+                  valuePass = $("#selltokenamount").val();
+                  valuePass = valuePass * 1000000;
+
+                  var fst_contractadd = "TKzEMzoFWBuogADEfngQihri1VftwbkQcw";
+                  var fst_contractInfo = await tronWeb.trx.getContract(
+                    fst_contractadd
+                  );
+                  var fstcontract = await tronWeb.contract(
+                    fst_contractInfo.abi.entrys,
+                    fst_contractadd
+                  );
+                  var fstall = await fstcontract
+                    .allowance(myAccountAddress, mainSellContractAddress)
+                    .call();
+                  fstall = window.tronWeb.toDecimal(fstall);
+
+                  if (fstall < 1000) {
+                    var resultapp = await fstcontract
+                      .approve(mainSellContractAddress, 720000000000)
+                      .send({
+                        shouldPollResponse: false,
+                        feeLimit: 15000000,
+                        callValue: 0,
+                        from: myAccountAddress,
+                      });
+                    console.log("resultapp : " + resultapp);
+                    if (resultapp) {
+                      alertify.alert(
+                        "<b>Please wait</b>",
+                        "This is 1st step of FST sell. You can check the status at <a href='https://tronscan.org/#/transaction/" +
+                          resultapp +
+                          "' target='_blank'>Tronscan</a><br><br> Please wait while transaction is being confirmed in the Blockchain.",
+                        function () {}
+                      );
+
+                      setTimeout(async function () {
+                        var result = await mySellContract
+                          .sellTokens(valuePass)
+                          .send({
+                            shouldPollResponse: false,
+                            feeLimit: 15000000,
+                            callValue: valuePass,
+                            from: myAccountAddress,
+                          });
+
+                        if (result) {
+                          // alertify.alert("Transacton Recorded","Thanks for Selling Token. You can check the status at <a href='https://tronscan.org/#/transaction/"+result+"' target='_blank'>Tronscan</a><br><br> Please wait while transaction is being confirmed in the Blockchain.", function(){});
+                          alertify.alert(
+                            "<b>Please wait</b>",
+                            "<center><img src='https://forsagetron.io/img/ripple-loader.gif' /></center> <br>Please wait upto 2 minutes and then refresh the page. <a href='https://tronscan.org/#/transaction/" +
+                              result +
+                              "' target='_blank'>Click here to check the status of transaction.</a><br>",
+                            function () {
+                              //window.location.reload();
+                            }
+                          );
+                          $(".ajs-ok").css("display", "none");
+                          $(".ajs-close").css("display", "none");
+
+                          var timerID = setInterval(function () {
+                            var xhttp = new XMLHttpRequest();
+                            xhttp.onreadystatechange = function () {
+                              console.log(
+                                "this.status : " +
+                                  this.status +
+                                  " ::: " +
+                                  this.readyState
+                              );
+                              if (this.readyState == 4 && this.status == 200) {
+                                $(".ajs-ok").click();
+                                if (this.responseText == "") {
+                                  alertify.alert(
+                                    "",
+                                    "<center><img src='https://forsagetron.io/img/green-tick-mark.png' /> <br> <br>Thanks for Selling Token."
+                                  );
+                                } else {
+                                  alertify.alert(
+                                    "",
+                                    "<center><img src='https://forsagetron.io/img/red-warning-50x50.png' /> <br> <br>Your transaction has been failed"
+                                  );
+                                }
+                                $(".ajs-ok").css(
+                                  "display",
+                                  "table-footer-group"
+                                );
+                                clearInterval(timerID);
+                              }
+                            };
+                            xhttp.open(
+                              "GET",
+                              "https://forsagetron.io/dashboard/includes/getUserIdFromTransactionHash.php?txHash=" +
+                                result,
+                              true
+                            );
+                            xhttp.send();
+                          }, 30 * 1000);
+                        }
+                      }, 1500);
+                    }
+                  } else {
+                    var result = await mySellContract
+                      .sellTokens(valuePass)
+                      .send({
+                        shouldPollResponse: false,
+                        feeLimit: 15000000,
+                        callValue: valuePass,
+                        from: myAccountAddress,
+                      });
+
+                    if (result) {
+                      // alertify.alert("Transacton Recorded","Thanks for Selling Token. You can check the status at <a href='https://tronscan.org/#/transaction/"+result+"' target='_blank'>Tronscan</a><br><br> Please wait while transaction is being confirmed in the Blockchain.", function(){});
+                      alertify.alert(
+                        "<b>Please wait</b>",
+                        "<center><img src='https://forsagetron.io/img/ripple-loader.gif' /></center> <br>Please wait upto 2 minutes and then refresh the page. <a href='https://tronscan.org/#/transaction/" +
+                          result +
+                          "' target='_blank'>Click here to check the status of transaction.</a><br>",
+                        function () {
+                          //window.location.reload();
+                        }
+                      );
+                      $(".ajs-ok").css("display", "none");
+                      $(".ajs-close").css("display", "none");
+
+                      var timerID = setInterval(function () {
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                          if (this.readyState == 4 && this.status == 200) {
+                            $(".ajs-ok").click();
+                            if (this.responseText == "") {
+                              alertify.alert(
+                                "",
+                                "<center><img src='https://forsagetron.io/img/green-tick-mark.png' /> <br> <br>Thanks for Selling Token."
+                              );
+                            } else {
+                              alertify.alert(
+                                "",
+                                "<center><img src='https://forsagetron.io/img/red-warning-50x50.png' /> <br> <br>Your transaction has been failed"
+                              );
+                            }
+                            $(".ajs-ok").css("display", "table-footer-group");
+                            clearInterval(timerID);
+                          }
+                        };
+                        xhttp.open(
+                          "GET",
+                          "https://forsagetron.io/dashboard/includes/getUserIdFromTransactionHash.php?txHash=" +
+                            result,
+                          true
+                        );
+                        xhttp.send();
+                      }, 30 * 1000);
+                    }
+                  }
+                }
+              }
+            } catch (e) {}
+          }
+        });
+
+        $(".copy_alliliate_btn").click(async function () {
+          $(".copy_alliliate_link").focus();
+          $(".copy_alliliate_link").select();
+          document.execCommand("copy");
+
+          alertify.success("Text copied successfully.");
+        });
+
+        $(".copy_tronwallet_btn").click(function () {
+          var copyText = document.getElementById("userbase58");
+
+          copyText.type = "text";
+          copyText.select();
+          document.execCommand("copy");
+          copyText.type = "hidden";
+          alertify.success("Text copied successfully.");
+
+          /*var val = $(this).attr('data-link');
+
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(val).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        alertify.success("Text copied successfully.");*/
+        });
+
+        $(".mainContract_btn").click(function () {
+          var copyText = document.getElementById("dummy");
+
+          copyText.type = "text";
+          copyText.select();
+          document.execCommand("copy");
+          copyText.type = "hidden";
+          alertify.success("Text copied successfully.");
+          /*var val = $(this).attr('data-link');
+
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(val).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        alertify.success("Text copied successfully.");*/
+        });
+      });
+    </script>
+    <style type="text/css">
+      .ajs-message.ajs-green {
+        color: #fff;
+        background-color: #66bb6a;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+      }
+      .ajs-message.ajs-sky {
+        color: #fff;
+        background-color: #2687dad1;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+      }
+      .ajs-message.ajs-yellow {
+        color: #ffff;
+        background-color: #ffc626e3;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+      }
+      .ajs-message.ajs-red {
+        color: #000;
+        background-color: #ef5350;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#notification_started").click(function () {
+          console.log("need to be stop");
+          var expires = "expires=Session";
+          var now = new Date();
+          now.setTime(now.getTime() + 1 * 3600 * 1000);
+          document.cookie =
+            "is_stop_notification=yes; expires=" + now + "; path=/";
+          location.reload();
+        });
+
+        $("#notification_stoped").click(function () {
+          console.log("need to be startttttttttttttttttt");
+          document.cookie =
+            "is_stop_notification=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          location.reload();
+        });
+
+        $("#notification_started2").click(function () {
+          console.log("need to be stop");
+          var expires = "expires=Session";
+          var now = new Date();
+          now.setTime(now.getTime() + 1 * 3600 * 1000);
+          document.cookie =
+            "is_stop_notification=yes; expires=" + now + "; path=/";
+          location.reload();
+        });
+
+        $("#notification_stoped2").click(function () {
+          console.log("need to be startttttttttttttttttt");
+          document.cookie =
+            "is_stop_notification=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          location.reload();
+        });
+
+        // var timestamp = Math.round((new Date()).getTime() / 1000);
+        // console.log(timestamp);
+        // localStorage.setItem('timestamp',timestamp);
+
+        function checkAlerts() {
+          //var time = localStorage.getItem('timestamp');
+          var timestamp = Math.round(new Date().getTime() / 1000);
+          timestamp = timestamp - 30;
+          console.log(timestamp);
+          $.get("cron/alert-api.php?ts=" + timestamp, async function (data) {
+            // Display the returned data in browser
+            data = JSON.parse(data);
+            if (data.result == true) {
+              //await new Promise((resolve, reject) => setTimeout(resolve, 2000));
+              var result = data.data;
+              //result.sort(function(a,b){return a.timestamp-b.timestamp});
+              var len = result.length;
+              $("#total").html(len + " total alerts");
+              var x = Math.round(30 / len);
+              console.log(x);
+              $("#delay").html(x + " second delay of alerts");
+              console.log(result);
+              for (var i = 0; i < len; i++) {
+                var type = result[i].type;
+                var message = result[i].message;
+                var delay = x * 1000;
+                if (type == "join") {
+                  alertify.notify(message, "sky", 20, function () {});
+                }
+                if (type == "buy") {
+                  alertify.notify(message, "sky", 20, function () {});
+                }
+                if (type == "profit") {
+                  alertify.notify(message, "green", 20, function () {});
+                }
+                await new Promise((resolve, reject) =>
+                  setTimeout(resolve, delay)
+                );
+              }
+            }
+          });
+          //localStorage.setItem('timestamp',timestamp);
+        }
+
+        var is_stop_notification = getCookie("is_stop_notification");
+        if (is_stop_notification != "yes") {
+          checkAlerts();
+          setInterval(checkAlerts, 30000);
+        }
+      });
+
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(";");
+
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#news").on("click", function () {
+          alertify.alert(
+            "Forsagetron News",
+            '<p style="color:white">1. Forsagetron is launching Worlds biggest DeFi platform.</p><p style="color:white">2. Chance to buy FST Token at base price before it go moon</p><p style="color:white">3. Forsagetron Governance system approved the proposal by 99% vote </p><p style="color:white">4. Forsagetron Governance system is launched. We encourage everyone to participate fully and and create success for each others.   </p> <p style="color:white">5. Notifications can be turned on or off.  </p><p style="color:white">6. Users can now download their earning banner from left hand section.</p>'
+          );
+        });
+      });
+
+      $(document).ready(function () {
+        $("#news2").on("click", function () {
+          alertify.alert(
+            "Forsagetron News",
+            '<p style="color:white">1. More languages are added in the system to help international audience to view it in thier own native languages.</p><p style="color:white">2. Overtaking is now active and many more updates are coming to make your path easy</p><p style="color:white"> 3. Leaderboard is launched. We encourage everyone to participate fully and and create success for each others.   </p> <p style="color:white">4. Notifications can be turned on or off.  </p><p style="color:white">5. Users can now download their earning banner from left hand section.   </p>'
+          );
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      var text = [
+        "Scruitinizing New Opportunity",
+        "We Are Solution",
+        "Always First & Fast",
+        "Dear Community Get Ready!",
+        "Something Mind Blowing is Coming...",
+      ];
+      var counter = 0;
+      var elem = $("#greeting");
+      setInterval(change, 6000);
+      function change() {
+        elem.fadeOut(function () {
+          elem.html(text[counter]);
+          counter++;
+          if (counter >= text.length) {
+            counter = 0;
+          }
+          elem.fadeIn();
+        });
+      }
+    </script>
+    <script>
+      // 			$(document).ready(function(){
+      //   				$("#view_transactionss").click(function(){
+      //     				$("#view_transaction_detailsss").show();
+      //   				});
+      //   				$("#view_transactionss").click(function(){
+      //     				$("#view_transactionss").hide();
+      //   				});
+      // 			});
+
+      /*	function getTimeRemaining(endtime) {
+              const total = Date.parse(endtime) - Date.parse(new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' }));
+              const seconds = Math.floor((total / 1000) % 60);
+              const minutes = Math.floor((total / 1000 / 60) % 60);
+              const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+              const days = Math.floor(total / (1000 * 60 * 60 * 24));
+              
+              return {
+                total,
+                days,
+                hours,
+                minutes,
+                seconds
+              };
+            }
+            
+            function initializeClock(id, endtime) {
+              const clock = document.getElementById(id);
+             // const daysSpan = clock.querySelector('.days');
+              const hoursSpan = clock.querySelector('.hours');
+              const minutesSpan = clock.querySelector('.minutes');
+              const secondsSpan = clock.querySelector('.seconds');
+            
+              function updateClock() {
+                const t = getTimeRemaining(endtime);
+            
+                //daysSpan.innerHTML = t.days;
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+            
+                if (t.total <= 0) {
+                  clearInterval(timeinterval);
+                }
+              }
+            
+              updateClock();
+              const timeinterval = setInterval(updateClock, 1000);
+            }
+            function initializeLaunchClock(id, endtime) {
+              const clock = document.getElementById(id);
+              const daysSpan = clock.querySelector('.days');
+              const hoursSpan = clock.querySelector('.hours');
+              const minutesSpan = clock.querySelector('.minutes');
+              const secondsSpan = clock.querySelector('.seconds');
+            
+              function updateClock() {
+                const t = getTimeRemaining(endtime);
+            
+                daysSpan.innerHTML = t.days;
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+            
+                if (t.total <= 0) {
+                  clearInterval(timeinterval);
+                }
+              }
+            
+              updateClock();
+              const timeinterval = setInterval(updateClock, 1000);
+            }
+            
+           // var vdate=
+            const deadlinelaunch = new Date(Date.parse('2020-11-06 12:50:00') + 0 * 40 * 60 * 60 * 1000 );
+            deadlinelaunch.toLocaleString('en-US', { timeZone: 'Europe/Moscow' });
+            
+            var newdate= new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' });
+            if(Date.parse('2020-10-29 17:00:00')<Date.parse(newdate))
+            {
+                const deadlinelaunch1 = new Date(Date.parse('2020-11-06 12:50:00') + 0 * 40 * 60 * 60 * 1000  );
+                deadlinelaunch1.toLocaleString('en-US', { timeZone: 'Europe/Moscow' });
+                $("#tokenlaunchtitle").html("DeFi Staking ROI Starts In");
+                initializeLaunchClock('countdownclock', deadlinelaunch1);
+            }
+            else
+            {
+                initializeLaunchClock('countdownclock', deadlinelaunch);
+                
+            }*/
+    </script>
+  </body>
+  <app-content ng-version="11.1.0"></app-content>
 </html>

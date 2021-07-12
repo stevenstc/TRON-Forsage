@@ -1,0 +1,5 @@
+var vneDate=moment.tz("2020-11-07 15:50","Europe/Moscow");$('#countdownclock').countdown(vneDate.toDate(),function(event){var $this=$(this).html(event.strftime(''
++'<div class=""> <span class="countdown-time countdown-time-first days">%D</span> <span class="countdown-text">Day</span></div> '
++'<div class=""> <span class="countdown-time hours">%H</span> <span class="countdown-text ">Hour</span></div> '
++'<div class=""> <span class="countdown-time minutes">%M</span> <span class="countdown-text">Min</span></div> '
++'<div class=""> <span class=" countdown-time countdown-time-last seconds">%S</span> <span class="countdown-text">Sec</span></div>'));});

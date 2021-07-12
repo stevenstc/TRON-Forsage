@@ -72,14 +72,62 @@ export default class EarnTron extends Component {
 
       if (await Utils.contract.usersActiveX3Levels(direccion, i).call()) {
         activeLevels++ ;
+        var levelPrice = await Utils.contract.levelPrice(16-activeLevels).call();
+        levelPrice = parseInt(levelPrice._hex)/10**6;
         var matrix = await Utils.contract.usersX3Matrix(direccion, i).call();
         canasta[i] = (
-          <div className="col-sm-4 single-services" key={"level"+i}>
-            <h4 className="pt-30 pb-20">Nivel {i}</h4>
-            <p>
-              personas {matrix[1].length}| ciclos {parseInt(matrix[1].length/3)}
-            </p>
-          </div>);
+          <div className="ternary" key={"level"+i}>
+                      <a
+                        href="https://forsagetron.io/dashboard/?page/x3/1/1/"
+                        className="ternary-root matrix-root__active"
+                      >
+                        <span className="matrix-level matrix-level__active">
+                          {i}
+                        </span>
+                        <span className="matrix-price"> {levelPrice} </span>
+                        <span
+                          className="level-locked"
+                          id="pre_levelx3_warning_1"
+                          style={{"display": "none"}}
+                        >
+                          <img
+                            src="files/alert.svg"
+                            title="To activate reopen on this platform, please upgrade to the next level!"
+                            alt="!"
+                          />
+                        </span>
+                      </a>
+                      <div className="ternary-children">
+                        <div className="matrix-children__nonactive"></div>
+                        <div className="matrix-children__nonactive"></div>
+                        <div className="matrix-children__nonactive"></div>
+                      </div>
+                      <div className="ternary-branchs">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                      <div className="matrix-break"></div>
+                      <div
+                        className="matrix-info x3_get_level_data"
+                        id={"x3_loop_"+i}
+                        x3_data_plan="1"
+                        x3_data_level={i}
+                        title="Click here to get details."
+                        style={{"cursor": "pointer"}}
+                      >
+                        <div className="matrix_partners__count">
+                          <span><level_members>{matrix[1].length}</level_members></span>
+                          <i className="matrix-icon_users"></i>
+                        </div>
+                        <div className="matrix_reinvest">
+                          <span><level_cycles>{parseInt(matrix[1].length/3)}</level_cycles></span>
+                          <i className="matrix-icon_sync"></i>
+                        </div>
+                      </div>
+                    </div>
+
+           );
       }
 
 
@@ -128,25 +176,11 @@ export default class EarnTron extends Component {
 
     return (
 
-      <>
+      <>    
 
-      <section className="loan-services spad">
-          <div className="container">
-              <div className="row">
-                  <div className="col-lg-12">
-                      <div className="section-title">
-                          <h2>My referral link:</h2>
-                          <p>
-                            <a style={{"color":"blue"}} href={link}>{link}</a> &nbsp;&nbsp;
-                            <CopyToClipboard text={link}>
-                              <button type="button" className="primary-btn">Copy</button>
-                            </CopyToClipboard>
-                          </p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+
+            {this.state.canastas}
+                   
 
       </>
       
