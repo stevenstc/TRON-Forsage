@@ -128,30 +128,35 @@ export default class EarnTron extends Component {
 
     return (
 
-      <section  id="office" className="simple-services-area section-gap">
-        <div className="container text-center">
-          <header className="section-header">
-            <h3 className="white"><span style={{'fontweight': 'bold'}}>
-              My office:</span> 
-            </h3>
-            <p>{direccion}</p><br />
-            <h3 className="white" >Referral link:</h3>
-            <h6 className="aboutus-area" style={{'padding': '1.5em', 'fontSize': '11px'}}><a href={link}>{link}</a><br /><br />
-            <CopyToClipboard text={link}>
-              <button type="button" className="primary-btn header-btn text-uppercase " style={{'paddingRight': '30px'}}>Copy to clipboard</button>
-            </CopyToClipboard>
-            </h6>
-            <hr></hr>
+      <>
+
+      <section className="loan-services spad">
+          <div className="container">
+              <div className="row">
+                  <div className="col-lg-12">
+                      <div className="section-title">
+                          <h2>My referral link:</h2>
+                          <p>
+                            <a style={{"color":"blue"}} href={link}>{link}</a> &nbsp;&nbsp;
+                            <CopyToClipboard text={link}>
+                              <button type="button" className="primary-btn">Copy</button>
+                            </CopyToClipboard>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
             
-          </header>
 
           <div className="row">
 
             {this.state.canastas}
                     
           </div>
-        </div>  
-      </section>
+
+      </>
       
     );
   }
