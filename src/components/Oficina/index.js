@@ -130,23 +130,15 @@ export default class EarnTron extends Component {
 
       <>
 
-      <section className="loan-services spad">
-          <div className="container">
-              <div className="row">
-                  <div className="col-lg-12">
-                      <div className="section-title">
-                          <h2>My referral link:</h2>
-                          <p>
-                            <a style={{"color":"blue"}} href={link}>{link}</a> &nbsp;&nbsp;
-                            <CopyToClipboard text={link}>
-                              <button type="button" className="primary-btn">Copy</button>
-                            </CopyToClipboard>
-                          </p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+        <div className="section-title">
+            <h2>My referral link:</h2>
+            <p>
+              <a style={{"color":"blue"}} href={link}>{link}</a> &nbsp;&nbsp;
+              <CopyToClipboard text={link}>
+                <button type="button" className="primary-btn">Copy</button>
+              </CopyToClipboard>
+            </p>
+        </div>
 
       </>
       
