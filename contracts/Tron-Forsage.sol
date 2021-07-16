@@ -1,6 +1,6 @@
-pragma solidity >=0.5.9;
+pragma solidity >=0.5.15;
 
-contract SmartMatrixForsageTron {
+contract TronForsage {
     
     struct User {
         uint id;
@@ -54,7 +54,7 @@ contract SmartMatrixForsageTron {
     
     
     constructor(address donerAddress) public {
-        levelPrice[1] = 350 * 1e6;
+        levelPrice[1] = 350 trx;
         uint8 i;
         for (i = 2; i <= LAST_LEVEL; i++) {
             levelPrice[i] = levelPrice[i-1] * 2;

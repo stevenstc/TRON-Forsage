@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
 import Utils from "../../utils";
 import contractAddress from "../Contract";
 
@@ -21,53 +20,29 @@ export default class EarnTron extends Component {
     };
 
     this.Investors = this.Investors.bind(this);
-    this.Link = this.Link.bind(this);
     this.withdraw = this.withdraw.bind(this);
+    this.deposit = this.deposit.bind(this);
   }
 
   async componentDidMount() {
     await Utils.setContract(window.tronWeb, contractAddress);
 
     await this.Investors();
-    setInterval(() => this.Link(),1*1000);
     setInterval(() => this.Investors(),2*1000);
   };
 
-  async Link() {
-
-    let mydireccion = await window.tronWeb.trx.getAccount();
-      mydireccion = window.tronWeb.address.fromHex(mydireccion.address);
-
-      var user = await Utils.contract.users(mydireccion).call();
-
-    if( await Utils.contract.isUserExists(mydireccion).call() ){
-
-      let loc = document.location.href;
-      if(loc.indexOf('?')>0){
-        loc = loc.split('?')[0]
-      }
-      
-
-      mydireccion = loc+'?ref='+parseInt(user.id._hex);
-      this.setState({
-        link: mydireccion,
-      });
-    }else{
-      this.setState({
-        link: "Haz una inversión para obtener el LINK de referido",
-      });
-    }
-  }
     
 
   async Investors() {
 
     var direccion = await window.tronWeb.trx.getAccount();
-    var direccion = window.tronWeb.address.fromHex(direccion.address);
+    direccion = window.tronWeb.address.fromHex(direccion.address);
+
+    var lastLevel = await Utils.contract.LAST_LEVEL().call();
 
     var canasta = [];
 
-    for (var i = 15; i >= 1; i--) {
+    for (var i = lastLevel; i >= 1; i--) {
 
       var levelPrice = await Utils.contract.levelPrice(i).call();
       levelPrice = parseInt(levelPrice._hex)/10**6;
@@ -78,9 +53,9 @@ export default class EarnTron extends Component {
 
         var partners;
 
-        if (matrix[1].length%3 != 0) {
+        if (matrix[1].length%3 !== 0) {
 
-          if (matrix[1].length%3 == 2){
+          if (matrix[1].length%3 === 2){
 
             partners = (
               <>
@@ -136,8 +111,6 @@ export default class EarnTron extends Component {
                         >
                           <img
                             src="files/alert.svg"
-                            title="To activate reopen on this platform, please upgrade to the next level!"
-                            alt="!"
                           />
                         </span>
                       </a>
@@ -155,7 +128,6 @@ export default class EarnTron extends Component {
                         id={"x3_loop_"+i}
                         x3_data_plan="1"
                         x3_data_level={i}
-                        title="Click here to get details."
                         style={{"cursor": "pointer"}}
                       >
                         <div className="matrix_partners__count">
@@ -175,9 +147,11 @@ export default class EarnTron extends Component {
 
         canasta[i] = (
           <div className="ternary" key={"level"+i}>
-                      <a
-                        href="/"
+                      <div
                         className="ternary-root matrix-root__nonactive"
+                        onClick={() => this.deposit()}
+                        tittle="Click to buy next level"
+                        style={{"cursor":"pointer"}}
                       >
                         <span className="matrix-level matrix-level__active">
                           {i}
@@ -190,11 +164,9 @@ export default class EarnTron extends Component {
                         >
                           <img
                             src="files/alert.svg"
-                            title="To activate reopen on this platform, please upgrade to the next level!"
-                            alt="!"
                           />
                         </span>
-                      </a>
+                      </div>
                       <div className="ternary-children">
                         <div className="matrix-children__nonactive"></div>
                         <div className="matrix-children__nonactive"></div>
@@ -211,7 +183,6 @@ export default class EarnTron extends Component {
                         id={"x3_loop_"+i}
                         x3_data_plan="1"
                         x3_data_level={i}
-                        title="Click here to get details."
                         style={{"cursor": "pointer"}}
                       >
                         <div className="matrix_partners__count">
@@ -243,6 +214,104 @@ export default class EarnTron extends Component {
 
     });
 
+  };
+
+  async deposit() {
+  
+
+    var accountAddress = await window.tronWeb.trx.getAccount();
+    accountAddress = window.tronWeb.address.fromHex(accountAddress.address);
+
+    var lastLevel = await Utils.contract.LAST_LEVEL().call();
+
+    var activeLevels = 0;
+
+    for (var i = lastLevel; i >= 0; i--) {
+
+      if (await Utils.contract.usersActiveX3Levels(accountAddress, i).call()) {
+        activeLevels++ ;
+      }
+      
+    }
+
+    var amount = await Utils.contract.levelPrice(activeLevels+1).call();
+    amount = parseInt(amount._hex)/10**6;
+
+
+    var balanceInTRX = await window.tronWeb.trx.getBalance(); //number
+    balanceInTRX = balanceInTRX/10**6;//number
+
+    console.log(balanceInTRX);
+
+    var owner = await Utils.contract.doner().call();
+
+    var direccionSP = window.tronWeb.address.fromHex(owner);
+
+
+    if ( balanceInTRX >= 50 && balanceInTRX >= amount){
+
+      var loc = document.location.href;
+      if(loc.indexOf('?')>0){
+
+        loc = loc.split('?')[1];
+        loc = loc.split('=')[1];
+
+
+            var inversor = await Utils.contract.idToAddress(loc).call();
+
+            if ( await Utils.contract.isUserExists(inversor).call() ) {
+
+              direccionSP = window.tronWeb.address.fromHex(inversor);
+            
+            }
+          
+        }
+
+        if ( amount >= 350 ){
+
+
+          if ( await Utils.contract.isUserExists(accountAddress).call() ) {
+
+
+            await Utils.contract.buyNewLevel(1, activeLevels+1).send({ callValue: amount*10**6});
+
+
+          }else{
+
+            await Utils.contract.registrationExt(direccionSP).send({ callValue: 2*amount*10**6});
+
+          }
+
+        }else{
+          window.alert("Please enter an amount greater than 200 TRX");
+        }
+
+        
+
+    }else{
+
+      
+      if (amount > 200 && balanceInTRX > 250) {
+
+        if ( amount > balanceInTRX) {
+          if (balanceInTRX <= 50) {
+            window.alert("You do not have enough funds in your account you place at least 250 TRX");
+          }else{
+            window.alert("You must leave 50 TRX free in your account to make the transaction");
+          }
+          
+          
+
+        }else{
+
+          window.alert("You must leave 50 TRX free in your account to make the transaction");
+          
+        }
+      }else{
+        window.alert("You do not have enough funds in your account you place at least 250 TRX");
+      }
+    }
+    
   };
 
   async withdraw(){
